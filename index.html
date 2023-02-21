@@ -1,0 +1,606 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="height=device-height">
+		<meta author="Revolt">
+		<meta description="Tanjin's Project Portfolio">
+		<meta keywords="Tanjin, Adnan, Abir">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Tanjin Adnan Abir - Portfolio</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link href='http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Merriweather:300,400,700,400italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+
+		<style type="text/css">
+			.small-caps {
+			    -ms-font-feature-settings: "smcp";
+			    -moz-font-feature-settings: "smcp";
+			    -webkit-font-feature-settings: "smcp";
+			    font-feature-settings: "smcp";
+			}
+
+			.text-figures { 
+			    -moz-font-feature-settings: 'onum';
+			    -ms-font-feature-settings: 'onum';
+			    -webkit-font-feature-settings: 'onum';
+			    font-feature-settings: 'onum';
+			}
+
+			body{
+				font-family: 'Merriweather', Georgia, serif;
+				margin: 0;
+				padding: 0;				
+			}
+			h1, h2, h3, h4, h5, h6{
+				font-family: 'Open Sans', sans-serif;
+			}
+			h1{
+				font-size: 48px;
+			}
+			h3{
+				font-size: 24px;
+			}
+			h6{
+				font-size: 22px;
+				font-weight: 300;
+				color: #FFF;
+			}
+			p, .item{
+				font-size: 18px;
+				font-weight: 300;
+				line-height: 1.75;
+			}
+			a{
+				color: #000;
+			}
+			
+			
+			.id_tags{
+				padding: 2px 4px;
+				font-size: 90%;
+				color: rgb(255, 255, 255);
+				background-color: #92898c;
+				border-radius: 4px;
+			}
+			.logo{
+				display: inline-block;
+				position: fixed;
+				left: 10px;
+				top: 10px;
+				z-index: 1000;
+				width: 44px;
+				height: 44px;
+				background: #000;
+				color: #FFF;
+				font-size: 24px;
+				font-weight: 700;
+				text-decoration: none;
+				text-align: center;
+			}
+			.logo:hover{
+				background: #444;
+			}
+			.logo-initial{
+				position: relative;
+				top: 8px;
+			}
+			.special-menu{
+				display: inline-block;
+				position: fixed;
+				left: 3%;
+				bottom: 5%;
+				z-index: 0;
+			}
+			.special-link{
+				border: 1px solid #888;
+				font-style: italic;
+				text-decoration: none;
+				padding: 5px 20px;
+				display: block;
+				font-family: 'Merriweather', serif;
+				text-align: center;
+				font-size: 14px;
+				border-radius: 3px;
+				margin-bottom: 5px;				
+			}
+			.scroll-menu{
+				display: inline-block;
+				position: fixed;
+				left: 3%;
+				top: 22%;
+				z-index: 0;
+			}
+			.scroll-menu .scroll-links{ 
+				font-family: 'Open Sans', sans-serif;
+				display: block;
+				text-decoration: none;
+				padding: 10px 0px;
+				font-size: 12px;
+				color: #000;
+				text-align: center;
+				border-bottom: 1px solid #CCC;
+				text-transform: uppercase;
+			}
+			.scroll-menu .scroll-links.last-link{
+				border-bottom: none;
+			}
+			.full-page{
+				width: 100%;
+				height: 100%;
+				z-index: 100;
+				background-color: #FFF;
+				position: relative;
+			}
+
+			.full-page h1, .full-page h6, .full-page a{
+				font-family: Caflisch Script Pro, cursive;
+			}
+
+			.full-page a{
+				text-decoration: none;
+				color: #4B0082;
+			}
+
+			.full-page h1, .full-page h6{
+				margin: 0px;
+			}
+
+			.full-page h1{
+				font-size: 3em;
+				line-height: 1.2em;
+			}
+
+			.full-page h6{
+				font-size: 1em;
+				color: #666;
+			}
+			.uppercase{
+				text-transform: uppercase;
+			}
+
+			.left{
+				width: 50%;
+				height: 100%;
+				display: inline-block;
+				float: left;
+				text-align: center;
+			}
+
+			.left.black{
+				background: #000;
+				color: #FFF;
+			}
+
+			.wrapper .container{
+				display: table;
+	   			width: 100%;
+	   			height: 100%;
+			}
+
+			.wrapper .container .dummy{
+				display: table-cell;
+				text-align: center;
+				vertical-align: middle;
+				padding: 0px 10%;
+			}
+			.full-page a.button{
+				text-decoration: none;
+				width: 200px;
+				padding: 10px 0px;
+				margin: 10px 0px;
+				border: 1px solid;
+				display: inline-block;
+				text-transform: uppercase;
+			}
+
+			.full-page a.button.white{
+				color: #FFF;
+			}
+
+			.full-page a.button.white:hover{
+				background: #222;
+			}
+			.content{
+				width: 65%;
+				margin: 150px auto;
+			}
+			.item{
+				margin-bottom: 30px;
+			}
+			.item .college-name, .item .skill-type{
+				font-weight: 400;
+			}
+			.item .year-address, .item .skills{
+				color: #444;
+			}
+			.grid-collection .item{
+				margin-bottom: 0px;
+				padding: 20px 0px;
+				border-bottom: 1px solid grey;
+			}
+			.grid-item{
+				position: relative;
+				margin-bottom: 50px;
+			}
+			.grid-item .content-wrapper{
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				background: rgba(0,0,0,0.4);
+				opacity: 0;
+				transition: opacity .3s ease-out;
+			    -moz-transition: opacity .3s ease-out;
+			    -webkit-transition: opacity .3s ease-out;
+			    -o-transition: opacity .3s ease-out;
+			    text-align: center;
+			}
+			.grid-item:hover .content-wrapper{
+				opacity: 1;
+			}
+			.grid-item .content-wrapper .button{
+				background: #FFF;
+				padding: 10px 25px;
+				color: #000;
+				text-decoration: none;
+				font-family: 'Open Sans', sans-serif;
+				border-radius: 4px;
+				position: relative;
+				top: -40px;
+				-webkit-transition: all 0.3s ease-out;
+				-moz-transition: all 0.3s ease-out;
+				-o-transition: all 0.3s ease-out;
+				-ms-transition: all 0.3s ease-out;
+				transition: all 0.3s ease-out;
+			}
+			.grid-item:hover .content-wrapper .button{
+				top: 50%;
+			}
+			.contacts a{
+				margin-right: 10px;
+			}
+			a.email{
+				text-decoration: none;
+			}
+			.brief{
+				font-size: 14px;
+				margin-top: 5px;
+			}
+			.item .link{
+				margin-top: 5px;
+			}
+
+			.project-title{
+				font-weight: 800;
+				font-size: 18px;
+			}
+			.project-description{
+				    margin-top: 10px;
+				    color: #444;
+				    font-size: 14px;
+				    font-weight: 300;
+			}
+			.project-links{
+				font-size: 14px;
+				font-weight: 800;
+				margin-top: 10px;
+			}
+			.img-circle {
+				border-radius: 50%;
+			}
+			/* Small Screens ----------- */
+			@media only screen and (max-width: 767px){
+				.special-menu .special-link{
+					font-size: 12px;
+					padding: 5px;
+				}
+				.scroll-menu{
+					display: none;
+				}
+				.left{
+					width: 100%;
+					height: 50%;
+				}
+				.wrapper .container .dummy{
+					padding: 0;
+				}
+			}
+			@media only screen and (max-height: 480px){
+				.scroll-menu{
+					display: none;
+				}
+				.left{
+					height: auto;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--TODO: change the logo initial from TT to your initials-->
+		<a href="./index.html" class="logo" title="Home"><span class="logo-initial">TA</span></a>
+		<div class="special-menu">
+			<a href="#top" class="scroll-links special-link">Top</a>
+		</div>
+		<div class="scroll-menu">
+			<a href="#about" class="scroll-links">About</a>
+			<a href="#publications" class="scroll-links">Publications</a>
+			<a href="#projects" class="scroll-links">Projects</a>
+			<a href="#skills" class="scroll-links">Skills</a>
+			<a href="#contact" class="scroll-links last-link">Contact</a>
+		</div>
+
+		<section class="full-page" id="top">
+			<section class="left white wrapper">
+				<div class="container">
+					<div class="dummy">
+						<h1 class="uppercase">Tanjin Adnan Abir</h1>
+						<h6 class="uppercase">Computer Scientist | Researcher</h6>
+					</div>
+				</div>
+			</section>
+			<section class="left black wrapper">
+				<div class="container">
+					<div class="dummy">
+						<img class="img-circle" src="images/me.jpg">
+						<div><a href="#portfolio" class="button white scroll-links" title="Academics & work experiences">Explore My Portfolio</a></div>
+					</div>
+				</div>
+			</section>
+			<div style="clear: both;"></div>
+		</section>
+
+		<section class="content" id="portfolio">
+		
+<!----------------------------------------------------ABOUT-ME START--------------------------------------------------------------------------------------->
+			<h1 class="heading" id="about" name="about">About me</h1>
+			<p>
+				<!-- Interested in "XYZ" and "PQR". Experienced in alpha, beta, gamma. I work at X as Y. Before joining X, I was pursuing Z degree at ABC University</a> under the guidance of Dr. Random Advisor. I have mostly worked in the areas of blah, blah, blah. Before joining Z degree, I worked at this useless tech giant company as a Systems Engineer for over a year. Apart from blah blah, I love working on X kind of problems. I also love doing _ in my free time. -->
+				Highly motivated and enthusiastic in research and development. I enjoy generating new ideas and devising feasible solutions to broadly relevant problems. My specific fields of interest include machine learning, data science, quantum computing, biophysics, computational biology and neuroscience. I am experienced in Python, Qiskit, quantum computation, machine learning and deep learning.
+			</p>
+<!----------------------------------------------------ABOUT-ME END--------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------EDUCATION START--------------------------------------------------------------------------------------->				
+			<h1 class="heading" id="education" name="education">Education</h1>
+			
+			<section class="grid-collection">
+				
+				<div class="item">
+					<div class="project-title">Master of Science in Applied Physics & Electronics</div>
+					<div class="paper-detail"><b>University:</b> Jahangirnagar University</div>
+					<div class="paper-detail"><b>CGPA:</b> 3.85 (First Position)</div>
+					<div class="paper-detail"><b>Duration:</b> 2021-2022</div>
+				</div>
+				
+				<div class="item">
+					<div class="project-title">Bachelor of Science in Computer Science & Engineering</div>
+					<div class="paper-detail"><b>University:</b> American International University- Bangladesh</div>
+					<div class="paper-detail"><b>CGPA:</b> 3.21</div>
+					<div class="paper-detail"><b>Duration:</b> 2014-2018</div>
+				</div>
+				
+				<!-- <div class="item">
+					<div class="project-title">Higher Secondary (Science)</div>
+					<div class="paper-detail"><b>School/College:</b> Gurudayal </div>
+					<div class="paper-detail"><b>CGPA:</b> 8.0</div>
+					<div class="paper-detail"><b>Duration:</b> 2011-2013</div>
+				</div> -->
+
+
+			</section>
+<!----------------------------------------------------EDUCATION END--------------------------------------------------------------------------------------->	
+
+<!----------------------------------------------------WORK START--------------------------------------------------------------------------------------->				
+			<h1 class="heading" id="education" name="education">Experience</h1>
+			
+			<section class="grid-collection">
+				
+				<!-- <div class="item">
+					<div class="project-title">Freelancer</div>
+					<div class="paper-detail"><b>University:</b> Jahangirnagar University</div>
+					<div class="paper-detail"><b>CGPA:</b> 3.85 (First Position)</div>
+					<div class="paper-detail"><b>Duration:</b> 2021-2022</div>
+				</div> -->
+				
+				<div class="item">
+					<div class="project-title">Teaching Assistant</div>
+					<div class="paper-detail"> American International University- Bangladesh</div>
+					<div class="paper-detail"> Department of Computer Science</div>
+					<div class="paper-detail"><b>Duration:</b> Sep, 2017- Dec, 2017</div>
+				</div>
+
+			</section>
+<!----------------------------------------------------WORK END--------------------------------------------------------------------------------------->	
+
+			
+<!----------------------------------------------------PUBLICATION START--------------------------------------------------------------------------------------->			
+			<h1 class="heading" id="publications" name="publications">Publications</h1>
+	        
+			<!--Paper 1: START-->
+			<div class="item">
+	        	<div class="paper-detail"><i>[Publlished] </i><span class="authors">Rahman, A., Noor, K. N., Abir, T. A., Rana, S., & Ali, M., </span><span class="paper-title"><b>Design and analysis of sustainable green data center with hybrid energy sources,</b> </span><span class="workshop-details"> to <b>Vol.9 No.7, July 2021</b> (Journal of Power and Energy Engineering)</span></div>
+	        	<div class="link">
+	        		<a href="https://doi.org/10.4236/jpee.2021.97006" target="_blank">Paper Link</a>;
+	        	</div>
+	        </div>
+			<!--Paper 1: END-->
+			
+
+<!----------------------------------------------------PUBLICATION END--------------------------------------------------------------------------------------->	
+
+<!----------------------------------------------------PROJECTS START---------------------------------------------------------------------------------------->	
+
+			<h1 class="heading" id="projects" name="projectsml">Research and Projects</h1>
+			<section class="grid-collection">
+				
+				<!--Project 1: START-->
+				<div class="item">
+					<div class="project-title">Design of a High-Resolution Optoelectronic Visual Prosthesis for Blind People (MS Thesis)</div>
+					<div><code class="id_tags">Python</code> <code class="id_tags">Biophysics</code> <code class="id_tags">Photonics</code></div>
+					
+					<div class="project-description"> Retinal prostheses are implantable devices that aim to restore the vision of blind patients suffering from retinal degeneration, mainly by artificially stimulating the remaining retinal neurons. Some retinal prostheses have successfully reached the stage of clinical trials. However, these devices can only restore vision partially and remain insufficient to enable patients to conduct everyday life independently. Besides, the visual acuity of artificial vision is limited by various factors from both engineering and physiological perspectives. The objective of this research is to find out the limitations of the functionality of existing retinal neuro-prosthesis devices and to propose a framework for a new device with design and simulations based on the limitations. </div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Behavioral-Cloning-P3/writeup_template.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Behavioral-Cloning-P3" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 1: END-->
+				
+				<!--Project 2: START-->
+				<div class="item">
+					<div class="project-title">Improved Detection of Cancer Cell and Tumor Using Region-Based Convolutional Neural Network
+from MRI Images (BS Thesis)</div>
+					<div><code class="id_tags">Python</code> <code class="id_tags">TensorFlow</code> <code class="id_tags">Machine Learning</code></div>
+					
+					<div class="project-description">Improved Detection of Cancer Cell and Tumor Using Region-Based Convolutional Neural Network from MRI Images. </div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Vehicle-Detection-P5/writeup.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Vehicle-Detection-P5" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 2: END-->
+
+				<!--Project 2: START-->
+				<div class="item">
+					<div class="project-title">Covid-19 Vaccine Side Effects Prediction using Machine Learning</div>
+					<div><code class="id_tags">Python</code> <code class="id_tags">TensorFlow</code> <code class="id_tags">Machine Learning</code></div>
+					
+					<div class="project-description">Improved Detection of Cancer Cell and Tumor Using Region-Based Convolutional Neural Network from MRI Images. </div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Vehicle-Detection-P5/writeup.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Vehicle-Detection-P5" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 2: END-->
+
+				<!--Project 2: START-->
+				<div class="item">
+					<div class="project-title">Prediction of Covid-19 Effects on Diabetes, Heart, Lung and Kidney Patients using Machine Learning</div>
+					<div><code class="id_tags">Python</code> <code class="id_tags">TensorFlow</code> <code class="id_tags">Machine Learning</code></div>
+					
+					<div class="project-description">Improved Detection of Cancer Cell and Tumor Using Region-Based Convolutional Neural Network from MRI Images. </div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Vehicle-Detection-P5/writeup.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Vehicle-Detection-P5" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 2: END-->
+
+				<!--Project 2: START-->
+				<div class="item">
+					<div class="project-title">Line Follower Robot | Automatic Room Light Controller</div>
+					<div><code class="id_tags">Arduino</code> <code class="id_tags">Electronics</code> <code class="id_tags">Robotics</code></div>
+					
+					<div class="project-description">Improved Detection of Cancer Cell and Tumor Using Region-Based Convolutional Neural Network from MRI Images. </div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Vehicle-Detection-P5/writeup.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Vehicle-Detection-P5" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 2: END-->
+
+			</section>
+<!----------------------------------------------------PROJECTS END---------------------------------------------------------------------------------------->				
+
+<!----------------------------------------------------SKILLS START---------------------------------------------------------------------------------------->				
+			<h1 class="heading" id="skills" name="skills">Skills</h1>
+			<div class="item">
+					<div class="paper-detail"><b>Programming:</b> Python, Java, SQL</div>
+					<div class="paper-detail"><b>Machine Learning:</b> TensorFlow, Scikit-learn | Algorithms: Support VectorMachine, Linear Regression, Logistic Regression, K-Nearest Neighbors, Naive Bayes, Decision Tree Classifier, Random Forest Classifier, XGBoost, AdaBoost, LightGBM, Gradient Boosting Classifier, K-Means Clustering, Hierarchical Clustering, Ensemble Learning | Artificial Neural Network: Feed Forward Neural Network, Multilayer Perceptron, Binary Classification, Activation function, Optimization (Gradient Descent, Stochastic Gradient Descent, Adam, Softmax) | Convolutional Neural Networks | Feature Engineering: Feature Selection (CorrelationMatrix), Handling Missing Values, Handling Imbalanced Data (SMOTE), Feature Scaling, Encoding | Dimensionality Reduction | Hyperparameter Tuning</div>
+					<div class="paper-detail"><b>Data Analysis:</b> Excel, Statistics, Data Cleaning</div>
+					<div class="paper-detail"><b>Quantum Computing:</b> Qiskit, Quantum Machine Learning</div>
+					<div class="paper-detail"><b>Software:</b> Anaconda, VS Code, Google Colaboratory, Git, GitHub, Gitlab, Zotero, LATEX, MS Office</div>
+					<div class="paper-detail"><b>Miscellaneous:</b> Academic Research, Project Management, SDLC Lifecycle, Design Pattern</div>
+					<div class="paper-detail"><b>Language:</b> Strong reading, writing, speaking and listening competencies in English and Bangla</div>
+				</div>
+
+<!----------------------------------------------------SKILLS END---------------------------------------------------------------------------------------->		
+
+<!----------------------------------------------------PROJECTS START---------------------------------------------------------------------------------------->	
+
+			<h1 class="heading" id="projects" name="projectsml">Miscellaneous Experience</h1>
+			<section class="grid-collection">
+				
+				<!--Project 1: START-->
+				<div class="item">
+					<div class="project-title">Programming Problem Solving</div>
+					<!-- <div><code class="id_tags">Python</code> <code class="id_tags">Biophysics</code> <code class="id_tags">Photonics</code></div> -->
+					
+					<div class="project-description"> LeetCode: https://leetcode.com/abirtanjinadnan | Hackerrank: https://www.hackerrank.com/tanjinadnanabir </div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Behavioral-Cloning-P3/writeup_template.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Behavioral-Cloning-P3" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 1: END-->
+				
+				<!--Project 2: START-->
+				<div class="item">
+					<div class="project-title">Short Courses</div>
+					<!-- <div><code class="id_tags">Python</code> <code class="id_tags">TensorFlow</code> <code class="id_tags">Machine Learning</code></div> -->
+					
+					<div class="project-description"><b>2022 - 2023:</b> Qubit by Qubit’s Introduction to Quantum Computing by The Coding School </div>
+					<div class="project-description"><b>2022 - 2023:</b> QCourse511-2 Graduate Course on Quantum Computing and Programming by QWorld and Faculty of Computing, University of Latvia </div>
+					<div class="project-description"><b>2022: </b> Summer of Quantum Short Course by LPS Qubit Collaboratory </div>
+					<div class="project-description"><b>2021: </b> Qiskit Global Summer School 2021: Quantum Machine Learning by IBM Quantum (Certificate of Quantum Excellence)</div>
+					<div class="project-description"><b>2022: </b> QWorld Summer School 2021 on Quantum Computing and Programming (QSilver and QBronze Diploma)  </div>
+					<div class="project-description"><b>2020 - 2023: </b> Machine Learning Specialization (Stanford Online) | Deep Learning Specialization (DeepLearning.AI) | Google Data Analytics Professional Certificate | Google IT Automation with Python Professional Certificate | Python for Everybody Specialization (Coursera) | Deep Learning using TensorFlow (IBM) | Computational Neuroscience (Coursera) | AI for Medicine (Coursera) | Genomic Data Science Specialization (Coursera)</div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Vehicle-Detection-P5/writeup.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Vehicle-Detection-P5" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 2: END-->
+
+				<!--Project 2: START-->
+				<div class="item">
+					<div class="project-title">Hackathon and Contest</div>
+					<!-- <div><code class="id_tags">Python</code> <code class="id_tags">TensorFlow</code> <code class="id_tags">Machine Learning</code></div> -->
+					
+					<div class="project-description"><b>2022: </b>Qiskit Fall Fest Kolkata Chapter 2022 and Hackathon (QML) |Womanium Quantum Hackathon 2022 (QWorld Quantum Hardware Education Challenge) | QC Hack 2022, Bootcamp and Hackathon (IBM Quantum Challenge Category) </div>
+					<div class="project-description"><b>2021: </b>IBM Quantum Challenge Fall 2021 | IBM Quantum Challenge Africa 2021 </div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Vehicle-Detection-P5/writeup.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Vehicle-Detection-P5" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 2: END-->
+
+				<!--Project 2: START-->
+				<div class="item">
+					<div class="project-title">Training</div>
+					<!-- <div><code class="id_tags">Python</code> <code class="id_tags">TensorFlow</code> <code class="id_tags">Machine Learning</code></div> -->
+					
+					<div class="project-description"><b>2022: </b>Entrepreneurship Capacity Development Training for Fresh Engineers, Engineering Staff College, Bangladesh | The Institution of Engineers, Bangladesh. </div>
+					<div class="project-description"><b>2021: </b>GoLang Coding BootCamp, Bangladesh Copyright Office </div>
+					<div class="project-description"><b>2019: </b>Mobile Application Development- Android, BASIS Institute of Technology and Management (BITM) </div>
+					<!-- <div class="project-links">
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/blob/master/CarND-Vehicle-Detection-P5/writeup.md" target="_blank">Report</a>; 
+						<a href="https://github.com/rajesh-iiith/CarND-DeepLearning-ComputerVision/tree/master/CarND-Vehicle-Detection-P5" target="_blank">Code</a>
+					</div> -->
+				</div>
+				<!--Project 2: END-->
+
+			</section>
+<!----------------------------------------------------PROJECTS END---------------------------------------------------------------------------------------->				
+
+
+			<h1 class="heading" id="contact" name="contact">Contact</h1>
+			<p class="contacts">
+				<div>
+					<a href="mailto:tanjinadnanabir@gmail.com">Email me</a>
+					<a href="https://github.com/tanjinadnanabir" target="_blank">   Github</a>
+					<a href="https://www.linkedin.com/in/tanjinadnanabir/" target="_blank">   LinkedIn</a>
+				</div>
+			</p>
+		</section>
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="./assets/thirdparty/scrollTo.min.js"></script>
+	<script>
+		$('.scroll-links').scrollTo();
+	</script>
+</html>
