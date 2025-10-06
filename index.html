@@ -178,7 +178,8 @@
 
         .hero-text h1 {
             font-size: 4rem;
-            margin-bottom: 0.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 0.8rem;
             line-height: 1.1;
         }
 
@@ -668,6 +669,44 @@
             background: var(--accent-tertiary);
             color: var(--bg-primary);
             transform: translateX(5px);
+        }
+
+        /* More Blogs Button */
+        .more-blogs-btn {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 1rem 2.5rem;
+            background: var(--gradient-2);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .more-blogs-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Blogs Modal */
+        .blogs-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem 5%;
+        }
+
+        .blogs-modal.active {
+            display: block;
         }
 
         /* Contact Section */
@@ -1383,6 +1422,93 @@
                 </div>
             </div>
         </div>
+            <button class="more-blogs-btn" id="moreBlogsBtn">More Blogs →</button>
+        </section>
+
+        <!-- Blogs Modal -->
+        <div class="blogs-modal" id="blogsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>More Blogs & Research</h2>
+                    <button class="close-modal" id="closeBlogsModal">×</button>
+                </div>
+                <div class="blogs-grid">
+                    <!-- Add more blog cards here -->
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h3>Quantum Machine Learning Overview</h3>
+                            <div class="blog-date">March 2024</div>
+                        </div>
+                        <div class="blog-content">
+                            <p>Exploring the intersection of quantum computing and machine learning, discussing quantum algorithms for data processing and optimization.</p>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link" target="_blank">📖 Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h3>Explainable AI Techniques</h3>
+                            <div class="blog-date">February 2024</div>
+                        </div>
+                        <div class="blog-content">
+                            <p>Understanding interpretability in deep learning models through SHAP, LIME, and attention visualization methods.</p>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link" target="_blank">📖 Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h3>Data Augmentation Strategies</h3>
+                            <div class="blog-date">January 2024</div>
+                        </div>
+                        <div class="blog-content">
+                            <p>Advanced techniques for improving model performance through synthetic data generation and augmentation methods.</p>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link" target="_blank">📖 Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h3>Transfer Learning Best Practices</h3>
+                            <div class="blog-date">December 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <p>Leveraging pre-trained models for domain-specific tasks, fine-tuning strategies, and feature extraction techniques.</p>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link" target="_blank">📖 Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h3>GANs for Image Synthesis</h3>
+                            <div class="blog-date">November 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <p>Deep dive into Generative Adversarial Networks, StyleGAN, and applications in creative AI and data generation.</p>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link" target="_blank">📖 Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-header">
+                            <h3>Edge AI and IoT Integration</h3>
+                            <div class="blog-date">October 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <p>Deploying machine learning models on edge devices, optimization for resource-constrained environments, and IoT applications.</p>
+                            <div class="blog-footer">
+                                <a href="#" class="blog-link" target="_blank">📖 Read More →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -1620,6 +1746,44 @@
                 document.body.style.overflow = 'auto';
             }
         });
+        
+        // More Blogs Modal
+        const moreBlogsBtn = document.getElementById('moreBlogsBtn');
+        const blogsModal = document.getElementById('blogsModal');
+        const closeBlogsModal = document.getElementById('closeBlogsModal');
+
+        moreBlogsBtn.addEventListener('click', () => {
+            blogsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBlogsModal.addEventListener('click', () => {
+            blogsModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        blogsModal.addEventListener('click', (e) => {
+            if (e.target === blogsModal) {
+                blogsModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (projectsModal.classList.contains('active')) {
+                    projectsModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+                if (blogsModal.classList.contains('active')) {
+                    blogsModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+
     </script>
 </body>
 </html>
