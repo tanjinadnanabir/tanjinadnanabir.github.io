@@ -450,6 +450,86 @@
             color: var(--bg-primary);
         }
 
+        /* More Projects Button */
+        .more-projects-btn {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 1rem 2.5rem;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .more-projects-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+        }
+
+        /* Projects Modal */
+        .projects-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem 5%;
+        }
+
+        .projects-modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .modal-header h2 {
+            font-size: 3rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .close-modal {
+            width: 50px;
+            height: 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-primary);
+            border-radius: 50%;
+            color: var(--accent-primary);
+            font-size: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .close-modal:hover {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            transform: rotate(90deg);
+        }
+
         /* Experience Section */
         .timeline {
             position: relative;
@@ -928,7 +1008,7 @@
                     <p>Data Cleaning, Data Mining, Exploratory Data Analysis, Data Visualization, Python, R, MS Excel & Google Sheet</p>
                 </div>
                 <div class="skill-item">
-                    <h3>⚛️ Mathematics</h3>
+                    <h3>🧮 Mathematics</h3>
                     <p>Linear Algebra, Differential and Integral Calculus, Probability and Statistics</p>
                 </div>
                 <div class="skill-item">
@@ -1072,12 +1152,87 @@
                 </div>
             </div>
         </div>
+            <button class="more-projects-btn" id="moreProjectsBtn">More Projects →</button>
+        </section>
+
+        <!-- Projects Modal -->
+        <div class="projects-modal" id="projectsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>More Projects</h2>
+                    <button class="close-modal" id="closeModal">×</button>
+                </div>
+                <div class="projects-grid">
+                    <!-- Copy all 6 existing projects here first, then add more -->
+                    <div class="project-card">
+                        <div class="project-image">🔐</div>
+                        <div class="project-content">
+                            <h3>Quantum Cryptography System</h3>
+                            <p>Implemented a quantum key distribution protocol using Qiskit, ensuring unconditionally secure communication channels.</p>
+                            <div class="project-footer">
+                                <div class="project-tags">
+                                    <span class="project-tag">Qiskit</span>
+                                    <span class="project-tag">Quantum</span>
+                                    <span class="project-tag">Cryptography</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" target="_blank">⚡ GitHub</a>
+                                    <a href="#" class="project-link demo" target="_blank">🚀 Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">🌐</div>
+                        <div class="project-content">
+                            <h3>Neural Machine Translation</h3>
+                            <p>Built a seq2seq model with attention mechanism for translating between multiple languages with high accuracy.</p>
+                            <div class="project-footer">
+                                <div class="project-tags">
+                                    <span class="project-tag">Seq2Seq</span>
+                                    <span class="project-tag">Attention</span>
+                                    <span class="project-tag">Translation</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" target="_blank">⚡ GitHub</a>
+                                    <a href="#" class="project-link demo" target="_blank">🚀 Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">📈</div>
+                        <div class="project-content">
+                            <h3>Stock Price Prediction</h3>
+                            <p>Developed LSTM-based time series model for predicting stock prices with 85% accuracy on historical data.</p>
+                            <div class="project-footer">
+                                <div class="project-tags">
+                                    <span class="project-tag">LSTM</span>
+                                    <span class="project-tag">Time Series</span>
+                                    <span class="project-tag">Finance</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="#" class="project-link" target="_blank">⚡ GitHub</a>
+                                    <a href="#" class="project-link demo" target="_blank">🚀 Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more project cards as needed -->
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience">
         <h2 class="section-title">Experience</h2>
         <div class="timeline">
+            <div class="timeline-item">
+                <h3>IT Executive | Deft Engineering</h3>
+                <div class="date">2023 - 2024</div>
+                <p>Troubleshooting computer issues and providing technical support to company employees, clients, and other system users; developing and maintaining website; email management; cloud management; preparing regular reports on expenses and IT budgets; organizing systems for important and confidential company documents; preparing reports and presentations with statistical data.</p>
+            </div>
             <div class="timeline-item">
                 <h3>STEM Teaching & Training</h3>
                 <div class="date">2021 - Present</div>
@@ -1108,10 +1263,42 @@
         </div>
     </section>
 
+    <!-- Training Section -->
+    <section id="training">
+        <h2 class="section-title">Training</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Entrepreneurship Capacity Development Training For Fresh Engineers</h3>
+                <div class="date">2022</div>
+                <p>Engineering Staff College and The Institution of Engineers, Bangladesh</p>
+            </div>
+            <div class="timeline-item">
+                <h3>GoLang Coding BootCamp</h3>
+                <div class="date">2021</div>
+                <p>Bangladesh Copyright Office</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Mobile Application Development - Android (Java, XML, Firebase, SQLite)</h3>
+                <div class="date">2019</div>
+                <p>BASIS Institute of Technology and Management (BITM) | Developed Two Projects | Tour Mate | Daily Expense Note</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Certifications Section -->
     <section id="certifications">
         <h2 class="section-title">Online Programs, Courses & Certifications</h2>
         <div class="timeline">
+            <div class="timeline-item">
+                <h3>Deep Learning</h3>
+                <div class="date">Neuromatch Academy</div>
+                <p>Interactive track and the course project of Deep Learning, with a duration of 128 hours | Project: Deep Learning for Sentiment Analysis on Stanford Sentiment Treebank.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Advanced End-to-end Quantum Computing Technical Course - ADEQUATE</h3>
+                <div class="date">Qureca</div>
+                <p>50+ hours online course with interactive basic to advanced Quantum Computing learning</p>
+            </div>
             <div class="timeline-item">
                 <h3>Machine Learning Specialization</h3>
                 <div class="date">Stanford Online & DeepLearning.AI</div>
@@ -1255,27 +1442,6 @@
                         <p>Dhaka, Bangladesh</p>
                     </div>
                 </div>
-                <!-- <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>
-                        <h3>Email</h3>
-                        <p>tanjinadnanabir@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div>
-                        <h3>Location</h3>
-                        <p>Dhaka, Bangladesh</p>
-                    </div>
-                </div> -->
-                <!-- <div class="contact-item">
-                    <div class="contact-icon">🎓</div>
-                    <div>
-                        <h3>Institution</h3>
-                        <p>Jahangirnagar University</p>
-                    </div>
-                </div> -->
                 <div class="social-links">
                     <a href="https://github.com/tanjinadnanabir" class="social-link" title="GitHub" target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -1461,6 +1627,36 @@
                     link.style.color = '#00f5ff';
                 }
             });
+        });
+        // More Projects Modal
+        const moreProjectsBtn = document.getElementById('moreProjectsBtn');
+        const projectsModal = document.getElementById('projectsModal');
+        const closeModal = document.getElementById('closeModal');
+
+        moreProjectsBtn.addEventListener('click', () => {
+            projectsModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModal.addEventListener('click', () => {
+            projectsModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        projectsModal.addEventListener('click', (e) => {
+            if (e.target === projectsModal) {
+                projectsModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && projectsModal.classList.contains('active')) {
+                projectsModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         });
     </script>
 </body>
