@@ -367,6 +367,157 @@
             margin-bottom: 0.5rem;
         }
 
+        /* More About Button */
+        .more-about-btn {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--accent-tertiary);
+            border: 2px solid var(--accent-tertiary);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .more-about-btn:hover {
+            background: rgba(0, 255, 136, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        /* About Modal */
+        .about-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem 5%;
+        }
+
+        .about-modal.active {
+            display: block;
+        }
+
+        .about-modal-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-detail-section {
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .about-detail-section h3 {
+            color: var(--accent-primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-detail-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .skills-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-detail-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .skill-detail-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.2);
+        }
+
+        .skill-detail-item h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-detail-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-detail-item ul li {
+            color: var(--text-secondary);
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .skill-detail-item ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--accent-tertiary);
+            font-weight: bold;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .interest-item {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .interest-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-secondary);
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.2);
+        }
+
+        .interest-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .interest-item h4 {
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .interest-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
         /* Projects Section */
         .projects-grid {
             display: grid;
@@ -1504,6 +1655,45 @@
                 font-size: 0.9rem;
             }
         }
+
+        @media (max-width: 768px) {
+            .more-about-btn {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+
+            .about-detail-section {
+                padding: 2rem;
+            }
+
+            .about-detail-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .skills-detail-grid,
+            .interests-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .more-about-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .about-detail-section {
+                padding: 1.5rem;
+            }
+
+            .about-detail-section h3 {
+                font-size: 1.3rem;
+            }
+
+            .about-detail-section p {
+                font-size: 1rem;
+            }
+        }
         
         /* Scroll-to-top button style */
         #scrollTopBtn {
@@ -1658,6 +1848,196 @@
                 <div class="skill-item">
                     <h3>💻 Miscellaneous</h3>
                     <p>VS Code, Google Colab, Kaggle, Git, GitHub, Jupyter Notebook, Research Paper Writing, Project Management</p>
+                </div>
+            </div>
+        </div>
+            <button class="more-about-btn" id="moreAboutBtn">More About Me →</button>
+        </section>
+
+        <!-- About Modal -->
+        <div class="about-modal" id="aboutModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>More About Me</h2>
+                    <button class="close-modal" id="closeAboutModal">×</button>
+                </div>
+                <div class="about-modal-content">
+                    <!-- Detailed Biography -->
+                    <div class="about-detail-section">
+                        <h3>📖 My Journey</h3>
+                        <p>With extensive experience in teaching STEM subjects and a strong foundation in IT support and software development, I bring a diverse and adaptable skill set to every endeavor. My passion for learning, research, and innovation fuels my drive to explore new opportunities and expand the boundaries of knowledge.</p>
+                        <p>I am highly motivated and enthusiastic about research and development, with a keen interest in generating original ideas and devising practical solutions to complex, real-world challenges. My primary fields of interest include deep learning, natural language processing, computer vision, data science, quantum computing, and computational biology.</p>
+                        <p>Throughout my academic and professional journey, I have consistently demonstrated a commitment to excellence and continuous learning. I believe in the transformative power of technology and its potential to solve some of humanity's most pressing challenges. My interdisciplinary background allows me to approach problems from multiple perspectives, combining insights from physics, computer science, and mathematics.</p>
+                    </div>
+
+                    <!-- Technical Skills Detailed -->
+                    <div class="about-detail-section">
+                        <h3>💻 Technical Expertise</h3>
+                        <div class="skills-detail-grid">
+                            <div class="skill-detail-item">
+                                <h4>Programming Languages</h4>
+                                <ul>
+                                    <li>Python (Advanced)</li>
+                                    <li>C/C++ (Intermediate)</li>
+                                    <li>R (Data Analysis)</li>
+                                    <li>JavaScript (Web Development)</li>
+                                    <li>SQL (Database Management)</li>
+                                    <li>HTML5 & CSS3</li>
+                                </ul>
+                            </div>
+                            <div class="skill-detail-item">
+                                <h4>Machine Learning Frameworks</h4>
+                                <ul>
+                                    <li>TensorFlow & Keras</li>
+                                    <li>PyTorch</li>
+                                    <li>Scikit-learn</li>
+                                    <li>Hugging Face Transformers</li>
+                                    <li>OpenCV</li>
+                                    <li>NLTK & spaCy</li>
+                                </ul>
+                            </div>
+                            <div class="skill-detail-item">
+                                <h4>Data Science Tools</h4>
+                                <ul>
+                                    <li>NumPy & Pandas</li>
+                                    <li>Matplotlib & Seaborn</li>
+                                    <li>Plotly & Dash</li>
+                                    <li>Tableau</li>
+                                    <li>MS Excel & Google Sheets</li>
+                                    <li>Jupyter Notebook</li>
+                                </ul>
+                            </div>
+                            <div class="skill-detail-item">
+                                <h4>Quantum Computing</h4>
+                                <ul>
+                                    <li>Qiskit Framework</li>
+                                    <li>Quantum Algorithms</li>
+                                    <li>Quantum Machine Learning</li>
+                                    <li>Quantum Cryptography</li>
+                                    <li>Quantum Information Theory</li>
+                                </ul>
+                            </div>
+                            <div class="skill-detail-item">
+                                <h4>Deep Learning Specializations</h4>
+                                <ul>
+                                    <li>Computer Vision (CNNs, YOLO, R-CNN)</li>
+                                    <li>NLP & LLMs (BERT, GPT, Transformers)</li>
+                                    <li>RNNs, LSTMs, GRUs</li>
+                                    <li>GANs & Autoencoders</li>
+                                    <li>Transfer Learning</li>
+                                </ul>
+                            </div>
+                            <div class="skill-detail-item">
+                                <h4>Development & Tools</h4>
+                                <ul>
+                                    <li>Git & GitHub</li>
+                                    <li>VS Code</li>
+                                    <li>Google Colab</li>
+                                    <li>Kaggle</li>
+                                    <li>Docker (Basic)</li>
+                                    <li>Linux/Unix</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Research Interests -->
+                    <div class="about-detail-section">
+                        <h3>🔬 Research Interests</h3>
+                        <div class="interests-grid">
+                            <div class="interest-item">
+                                <div class="icon">🧠</div>
+                                <h4>Deep Learning</h4>
+                                <p>Neural network architectures, optimization techniques, and novel learning paradigms</p>
+                            </div>
+                            <div class="interest-item">
+                                <div class="icon">👁️</div>
+                                <h4>Computer Vision</h4>
+                                <p>Image recognition, object detection, semantic segmentation, and visual understanding</p>
+                            </div>
+                            <div class="interest-item">
+                                <div class="icon">💬</div>
+                                <h4>Natural Language Processing</h4>
+                                <p>Language models, sentiment analysis, machine translation, and text generation</p>
+                            </div>
+                            <div class="interest-item">
+                                <div class="icon">⚛️</div>
+                                <h4>Quantum Computing</h4>
+                                <p>Quantum algorithms, quantum machine learning, and quantum information science</p>
+                            </div>
+                            <div class="interest-item">
+                                <div class="icon">🧬</div>
+                                <h4>Computational Biology</h4>
+                                <p>Bioinformatics, protein folding, genomics, and computational neuroscience</p>
+                            </div>
+                            <div class="interest-item">
+                                <div class="icon">📊</div>
+                                <h4>Data Science</h4>
+                                <p>Statistical analysis, predictive modeling, data visualization, and big data analytics</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills & Languages -->
+                    <div class="about-detail-section">
+                        <h3>🌟 Additional Skills & Languages</h3>
+                        <div class="skills-detail-grid">
+                            <div class="skill-detail-item">
+                                <h4>Soft Skills</h4>
+                                <ul>
+                                    <li>Problem Solving</li>
+                                    <li>Critical Thinking</li>
+                                    <li>Research & Analysis</li>
+                                    <li>Project Management</li>
+                                    <li>Team Collaboration</li>
+                                    <li>Communication</li>
+                                </ul>
+                            </div>
+                            <div class="skill-detail-item">
+                                <h4>Languages</h4>
+                                <ul>
+                                    <li>English (Fluent)</li>
+                                    <li>Bangla (Native)</li>
+                                </ul>
+                            </div>
+                            <div class="skill-detail-item">
+                                <h4>Teaching & Mentoring</h4>
+                                <ul>
+                                    <li>5+ Years Teaching Experience</li>
+                                    <li>STEM Subject Expertise</li>
+                                    <li>Curriculum Development</li>
+                                    <li>Student Assessment</li>
+                                    <li>Educational Technology</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Philosophy -->
+                    <div class="about-detail-section">
+                        <h3>💡 Philosophy & Approach</h3>
+                        <p>I believe that the intersection of different fields creates the most innovative solutions. My background spanning physics, computer science, and education has taught me to approach problems holistically, considering both theoretical foundations and practical applications.</p>
+                        <p>I am passionate about making complex concepts accessible and enjoy sharing knowledge with others. Whether through teaching, writing, or collaborative projects, I strive to contribute to the broader scientific and technological community.</p>
+                        <p>In my work, I emphasize:</p>
+                        <ul style="list-style: none; padding-left: 2rem;">
+                            <li style="color: var(--text-secondary); padding: 0.5rem 0; position: relative;">
+                                <span style="position: absolute; left: -1.5rem; color: var(--accent-tertiary);">▹</span>
+                                <strong style="color: var(--accent-primary);">Continuous Learning:</strong> Staying updated with the latest research and technologies
+                            </li>
+                            <li style="color: var(--text-secondary); padding: 0.5rem 0; position: relative;">
+                                <span style="position: absolute; left: -1.5rem; color: var(--accent-tertiary);">▹</span>
+                                <strong style="color: var(--accent-primary);">Ethical AI:</strong> Developing responsible and unbiased AI systems
+                            </li>
+                            <li style="color: var(--text-secondary); padding: 0.5rem 0; position: relative;">
+                                <span style="position: absolute; left: -1.5rem; color: var(--accent-tertiary);">▹</span>
+                                <strong style="color: var(--accent-primary);">Practical Impact:</strong> Creating solutions that address real-world problems
+                            </li>
+                            <li style="color: var(--text-secondary); padding: 0.5rem 0; position: relative;">
+                                <span style="position: absolute; left: -1.5rem; color: var(--accent-tertiary);">▹</span>
+                                <strong style="color: var(--accent-primary);">Collaboration:</strong> Working with diverse teams to achieve common goals
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2539,6 +2919,29 @@
             }
         });
 
+        // More About Modal
+        const moreAboutBtn = document.getElementById('moreAboutBtn');
+        const aboutModal = document.getElementById('aboutModal');
+        const closeAboutModal = document.getElementById('closeAboutModal');
+
+        moreAboutBtn.addEventListener('click', () => {
+            aboutModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeAboutModal.addEventListener('click', () => {
+            aboutModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        aboutModal.addEventListener('click', (e) => {
+            if (e.target === aboutModal) {
+                aboutModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
         // Close modals with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
@@ -2552,6 +2955,10 @@
                 }
                 if (certificationsModal.classList.contains('active')) {
                     certificationsModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+                if (aboutModal.classList.contains('active')) {
+                    aboutModal.classList.remove('active');
                     document.body.style.overflow = 'auto';
                 }
             }
