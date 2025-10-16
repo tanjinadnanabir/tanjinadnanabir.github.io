@@ -2442,6 +2442,98 @@
             }
         }
 
+        @media (max-width: 968px) {
+            .timeline-item {
+                grid-template-columns: 100px 1fr;
+                gap: 1.5rem;
+            }
+
+            .timeline-date-badge {
+                width: 100px;
+                height: 100px;
+                top: 100px;
+            }
+
+            .timeline-date-badge .year {
+                font-size: 1.1rem;
+            }
+
+            .timeline-content {
+                padding: 2rem;
+            }
+
+            .section-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .timeline-date-badge {
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: auto;
+                padding: 1rem;
+                flex-direction: row;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .timeline-date-badge .year {
+                font-size: 1rem;
+            }
+
+            .timeline-date-badge .status {
+                font-size: 0.7rem;
+            }
+
+            .timeline-date-badge .status::before {
+                content: '- ';
+            }
+
+            .timeline-content {
+                padding: 1.5rem;
+            }
+
+            .timeline-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .timeline-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .section-header-wrapper {
+                margin-bottom: 3rem;
+            }
+
+            .section-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .timeline-content p {
+                font-size: 0.95rem;
+            }
+
+            .timeline-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
     </style>
 </head>
 <body>
