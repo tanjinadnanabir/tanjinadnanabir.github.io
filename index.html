@@ -711,7 +711,7 @@
         }
 
         /* Experience Section */
-        .timeline {
+        /* .timeline {
             position: relative;
             padding-left: 3rem;
         }
@@ -766,6 +766,256 @@
 
         .timeline-item p {
             color: var(--text-secondary);
+        } */
+
+        /* Experience & Education Section - Enhanced Design */
+        .timeline {
+            position: relative;
+            padding-left: 0;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .timeline::before {
+            display: none;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 0;
+            padding: 0;
+            background: transparent;
+            border-radius: 16px;
+            border: none;
+            transition: all 0.4s;
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .timeline-item::before {
+            display: none;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(0);
+        }
+
+        .timeline-date-badge {
+            position: sticky;
+            top: 120px;
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-1);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 8px 30px rgba(0, 245, 255, 0.4);
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .timeline-date-badge .year {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-date-badge .status {
+            font-size: 0.75rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-item:hover .timeline-date-badge {
+            transform: scale(1.05) rotate(-5deg);
+            box-shadow: 0 12px 40px rgba(0, 245, 255, 0.6);
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-1);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s;
+        }
+
+        .timeline-item:hover .timeline-content::before {
+            transform: scaleY(1);
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(0, 245, 255, 0.05), transparent);
+            transition: top 0.6s;
+        }
+
+        .timeline-item:hover .timeline-content::after {
+            top: 100%;
+        }
+
+        .timeline-item:hover .timeline-content {
+            border-color: var(--accent-primary);
+            box-shadow: 0 15px 40px rgba(0, 245, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .timeline-content h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .timeline-content h3::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent-tertiary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-tertiary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.7;
+            }
+        }
+
+        .timeline-item .date {
+            display: none;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .timeline-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .timeline-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .timeline-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .timeline-meta-item .icon {
+            color: var(--accent-tertiary);
+            font-size: 1.1rem;
+        }
+
+        /* Alternate design for education */
+        #education .timeline-date-badge {
+            background: var(--gradient-2);
+        }
+
+        #education .timeline-date-badge {
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.4);
+        }
+
+        #education .timeline-item:hover .timeline-date-badge {
+            box-shadow: 0 12px 40px rgba(0, 255, 136, 0.6);
+        }
+
+        #education .timeline-content::before {
+            background: var(--gradient-2);
+        }
+
+        #education .timeline-content h3::before {
+            background: var(--accent-primary);
+            box-shadow: 0 0 10px var(--accent-primary);
+        }
+
+        /* Section headers with icons */
+        .section-header-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        #education .section-icon {
+            background: var(--gradient-2);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         /* Blogs Section */
@@ -925,6 +1175,424 @@
 
         .certifications-modal.active {
             display: block;
+        }
+
+        /* Certifications Section - Card Design */
+        /* .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .certification-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            transition: all 0.4s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-2);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .certification-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-tertiary);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
+        }
+
+        .certification-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 245, 255, 0.1) 100%);
+            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .certification-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .certification-header h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .certification-provider {
+            color: var(--accent-tertiary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .certification-provider::before {
+            content: '🎓';
+            font-size: 1.2rem;
+        }
+
+        .certification-body {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certification-body p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .certification-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .certification-tag {
+            padding: 0.4rem 0.9rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--accent-tertiary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-tertiary);
+            transition: all 0.3s;
+        }
+
+        .certification-tag:hover {
+            background: var(--accent-tertiary);
+            color: var(--bg-primary);
+        } */
+
+        /* Certifications Section - Card Design */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .certification-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            transition: all 0.4s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: 100%;
+        }
+
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-2);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .certification-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-tertiary);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.3);
+        }
+
+        .certification-header {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 245, 255, 0.1) 100%);
+            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .certification-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+            flex-shrink: 0;
+        }
+
+        .certification-header h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            min-height: 2.6rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .certification-provider {
+            color: var(--accent-tertiary);
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        .certification-provider::before {
+            content: '🎓';
+            font-size: 1.2rem;
+        }
+
+        .certification-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            min-height: 250px;
+        }
+
+        .certification-body p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .certification-footer {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .certification-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .certification-tag {
+            padding: 0.4rem 0.9rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--accent-tertiary);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--accent-tertiary);
+            transition: all 0.3s;
+        }
+
+        .certification-tag:hover {
+            background: var(--accent-tertiary);
+            color: var(--bg-primary);
+        }
+
+        .certification-view-btn {
+            display: block;
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--gradient-2);
+            color: var(--bg-primary);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .certification-view-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Certifications Modal - Enhanced Design */
+        .certifications-modal .modal-content {
+            max-width: 1400px;
+        }
+
+        .certification-detail-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 245, 255, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-2);
+        }
+
+        .certification-detail-card:hover {
+            border-color: var(--accent-tertiary);
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .certification-detail-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .certification-detail-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-2);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+        }
+
+        .certification-detail-info h3 {
+            color: var(--accent-primary);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-detail-provider {
+            color: var(--accent-tertiary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-detail-body {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .certification-detail-section {
+            background: rgba(0, 245, 255, 0.03);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 3px solid var(--accent-tertiary);
+        }
+
+        .certification-detail-section h4 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .certification-detail-section p,
+        .certification-detail-section ul {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .certification-detail-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .certification-detail-section ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .certification-detail-section ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-tertiary);
+            font-weight: bold;
+        }
+
+        .certification-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--gradient-2);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .certification-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+        }
+
+        .certification-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .certification-skill-tag {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid var(--accent-primary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--accent-primary);
         }
 
         /* Contact Section */
@@ -1735,6 +2403,45 @@
             }
         }
 
+        @media (max-width: 968px) {
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-detail-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .certification-detail-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .certification-card {
+                margin-bottom: 1rem;
+            }
+
+            .certification-header {
+                padding: 1.5rem;
+            }
+
+            .certification-body {
+                padding: 1.5rem;
+            }
+
+            .certification-detail-card {
+                padding: 1.5rem;
+            }
+
+            .certification-detail-info h3 {
+                font-size: 1.4rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -2257,7 +2964,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
+    <!-- <section id="experience">
         <h2 class="section-title">Experience</h2>
         <div class="timeline">
             <div class="timeline-item">
@@ -2276,29 +2983,140 @@
                 <p>Artificial Intelligence and Expert Systems Lab, Department of Computer Science, American International University - Bangladesh (AIUB)</p>
             </div>
         </div>
-    </section>
+    </section> -->
+
+    <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-header-wrapper">
+                <div class="section-icon">💼</div>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date-badge">
+                        <div class="year">2021</div>
+                        <div class="status">Present</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">👨‍🏫</div>
+                        <h3>STEM Teaching & Training</h3>
+                        <p>I specialise in teaching students in various STEM subjects, including mathematics, physics, chemistry, biology, computer science, and engineering. My approach emphasizes fostering a deep understanding of fundamental concepts, problem-solving skills, and critical thinking abilities. I create personalized lesson plans tailored to each student's learning style and academic goals, ensuring that they receive targeted support and guidance.</p>
+                        <div class="timeline-meta">
+                            <div class="timeline-meta-item">
+                                <span class="icon">⏱️</span>
+                                <span>5+ Years Experience</span>
+                            </div>
+                            <div class="timeline-meta-item">
+                                <span class="icon">🎯</span>
+                                <span>Multiple STEM Subjects</span>
+                            </div>
+                            <div class="timeline-meta-item">
+                                <span class="icon">📚</span>
+                                <span>Personalized Curriculum</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date-badge">
+                        <div class="year">2017</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">🔬</div>
+                        <h3>Teaching Assistant</h3>
+                        <p>Artificial Intelligence and Expert Systems Lab, Department of Computer Science, American International University- Bangladesh</p>
+                        <div class="timeline-meta">
+                            <div class="timeline-meta-item">
+                                <span class="icon">🏫</span>
+                                <span>AIUB, Bangladesh</span>
+                            </div>
+                            <div class="timeline-meta-item">
+                                <span class="icon">🤖</span>
+                                <span>AI & Expert Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- Education Section -->
-    <section id="education">
+    <!-- <section id="education">
         <h2 class="section-title">Education</h2>
         <div class="timeline">
             <div class="timeline-item">
                 <h3>Master of Science in Applied Physics & Electronics</h3>
-                <div class="date">2021 - 2022</div>
+                <div class="date">Jahangirnagar University | 2023</div>
                 <p><strong>Courses:</strong> Quantum Physics, Mechanics and Electromagnetics, Atomic and Nuclear Physics, Condensed Matter Physics, Optics and Electronics, Digital Electronics, Nano-Physics and Nano-Technology, Renewable Energy and Sustainable Development, Nuclear and Reactor Engineering</p>
                 <p><strong>Thesis:</strong> Design of a High-Resolution Optoelectronic Visual Prosthesis for Blind People</p>
             </div>
             <div class="timeline-item">
                 <h3>Bachelor of Science in Computer Science & Engineering</h3>
-                <div class="date">2014 - 2018</div>
+                <div class="date">American International University - Bangladesh</div>
                 <p><strong>Courses:</strong> Artificial Intelligence, Computer Vision and Pattern Recognition, Data Structure, Algorithms, Computer Organization and Architecture, Human-Computer Interaction, Introduction to Programming Language (C, C++), Object Oriented Programming (Java, C#), Web Technology | Electronic Device, Digital Logic Design, Digital Electronics, Microprocessor and I/O System | Statistics and Probability | Differential and Integral Calculus | Complex Variable, Laplace and Z-Transformation | Matrices, Vectors and Fourier Analysis | Research</p>
                 <p><strong>Thesis:</strong> Improved Detection of Cancer Cell and Tumor Using Region-Based Convolutional Neural Network from MRI Images</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-header-wrapper">
+            <div class="section-icon">🎓</div>
+            <h2 class="section-title">Education</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date-badge">
+                    <div class="year">2021</div>
+                    <div class="status">2022</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">⚛️</div>
+                    <h3>Master of Science in Applied Physics & Electronics</h3>
+                    <p><strong>University:</strong> Jahangirnagar University</p>
+                    <p style="margin-top: 1rem;"><strong>Key Courses:</strong> Quantum Physics, Mechanics and Electromagnetics, Atomic and Nuclear Physics, Condensed Matter Physics, Optics and Electronics, Digital Electronics, Nano-Physics and Nano-Technology, Renewable Energy and Sustainable Development, Nuclear and Reactor Engineering</p>
+                    <div class="timeline-meta">
+                        <div class="timeline-meta-item">
+                            <span class="icon">🏆</span>
+                            <span>Master's Degree</span>
+                        </div>
+                        <div class="timeline-meta-item">
+                            <span class="icon">📍</span>
+                            <span>Jahangirnagar University</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date-badge">
+                    <div class="year">2014</div>
+                    <div class="status">2018</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">💻</div>
+                    <h3>Bachelor of Science in Computer Science & Engineering</h3>
+                    <p><strong>University:</strong> American International University- Bangladesh</p>
+                    <p style="margin-top: 1rem;"><strong>Key Courses:</strong> Artificial Intelligence, Computer Vision and Pattern Recognition, Data Structure, Algorithms, Computer Organization and Architecture, Human-Computer Interaction, Programming (C, C++, Java, C#), Web Technology, Digital Electronics, Microprocessor, Statistics and Probability, Calculus, Complex Variable, Laplace and Z-Transformation, Matrices, Vectors and Fourier Analysis</p>
+                    <div class="timeline-meta">
+                        <div class="timeline-meta-item">
+                            <span class="icon">🎓</span>
+                            <span>Bachelor's Degree</span>
+                        </div>
+                        <div class="timeline-meta-item">
+                            <span class="icon">📍</span>
+                            <span>AIUB, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Training Section -->
-    <section id="training">
+    <!-- <section id="training">
         <h2 class="section-title">Training</h2>
         <div class="timeline">
             <div class="timeline-item">
@@ -2317,70 +3135,182 @@
                 <p>BASIS Institute of Technology and Management (BITM) | Developed Two Projects | Tour Mate | Daily Expense Note</p>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Certifications Section -->
-    <section id="certifications">
-        <h2 class="section-title">Online Programs, Courses & Certifications</h2>
+    <!-- Training Section -->
+    <section id="training">
+        <div class="section-header-wrapper">
+            <div class="section-icon">🎓</div>
+            <h2 class="section-title">Training</h2>
+        </div>
         <div class="timeline">
             <div class="timeline-item">
-                <h3>Deep Learning</h3>
-                <div class="date">Neuromatch Academy</div>
-                <p>Interactive track and the course project of Deep Learning, with a duration of 128 hours | Project: Deep Learning for Sentiment Analysis on Stanford Sentiment Treebank.</p>
-                <p><strong>Skills gained:</strong> Supervised Learning, Unsupervised Learning, Neural Networks, Decision Trees, Recommender Systems, Best Practices</p>
-                <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
+                <div class="timeline-date-badge">
+                    <div class="year">2021</div>
+                    <div class="status">2022</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">⚛️</div>
+                    <h3>Master of Science in Applied Physics & Electronics</h3>
+                    <p><strong>University:</strong> Jahangirnagar University</p>
+                    <p style="margin-top: 1rem;"><strong>Key Courses:</strong> Quantum Physics, Mechanics and Electromagnetics, Atomic and Nuclear Physics, Condensed Matter Physics, Optics and Electronics, Digital Electronics, Nano-Physics and Nano-Technology, Renewable Energy and Sustainable Development, Nuclear and Reactor Engineering</p>
+                    <div class="timeline-meta">
+                        <div class="timeline-meta-item">
+                            <span class="icon">🏆</span>
+                            <span>Master's Degree</span>
+                        </div>
+                        <div class="timeline-meta-item">
+                            <span class="icon">📍</span>
+                            <span>Jahangirnagar University</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="timeline-item">
-                <h3>Advanced End-to-end Quantum Computing Technical Course - ADEQUATE</h3>
-                <div class="date">Qureca</div>
-                <p>50+ hours online course with interactive basic to advanced Quantum Computing learning</p>
-                <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-            </div>
-            <div class="timeline-item">
-                <h3>Machine Learning Specialization</h3>
-                <div class="date">Stanford Online & DeepLearning.AI</div>
-                <p>Comprehensive program covering supervised learning, unsupervised learning, and best practices in machine learning. Implemented neural networks, decision trees, and recommender systems.</p>
-                <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-            </div>
-            <div class="timeline-item">
-                <h3>Deep Learning Specialization</h3>
-                <div class="date">DeepLearning.AI</div>
-                <p>Advanced deep learning concepts including CNNs, RNNs, LSTMs, attention mechanisms, and transformers. Completed projects on computer vision and natural language processing.</p>
-                <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-            </div>
-            <div class="timeline-item">
-                <h3>Mathematics for Machine Learning and Data Science Specialization</h3>
-                <div class="date">DeepLearning.AI</div>
-                <p>Linear Algebra for Machine Learning and Data Science | Calculus for Machine Learning and Data Science | Probability & Statistics for Machine Learning & Data Science.</p>
-                <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-            </div>
-            <div class="timeline-item">
-                <h3>NLP Specialization</h3>
-                <div class="date">DeepLearning.AI</div>
-                <p>Natural Language Processing with Classification and Vector Spaces | Natural Language Processing with Probabilistic Models | Natural Language Processing with Sequence Models | Natural Language Processing with Attention Models</p>
-                <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-            </div>
-            <div class="timeline-item">
-                <h3>Google Data Analytics Professional Certificate</h3>
-                <div class="date">Google | Coursera</div>
-                <p>Comprehensive data science training covering Python, SQL, data visualization, machine learning, and statistical analysis for real-world applications.</p>
-                <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-            </div>
-            <div class="timeline-item">
-                <h3>Python For Everybody Specialization</h3>
-                <div class="date">Coursera | Michigan Online</div>
-                <p>Capstone: Retrieving, Processing, and Visualizing Data with Python | Using Databases with Python |  Using Python to Access Web Data | Python Data Structures | Programming for Everybody (Getting Started with Python).</p>
-                <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
+                <div class="timeline-date-badge">
+                    <div class="year">2014</div>
+                    <div class="status">2018</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">💻</div>
+                    <h3>Bachelor of Science in Computer Science & Engineering</h3>
+                    <p><strong>University:</strong> American International University- Bangladesh</p>
+                    <p style="margin-top: 1rem;"><strong>Key Courses:</strong> Artificial Intelligence, Computer Vision and Pattern Recognition, Data Structure, Algorithms, Computer Organization and Architecture, Human-Computer Interaction, Programming (C, C++, Java, C#), Web Technology, Digital Electronics, Microprocessor, Statistics and Probability, Calculus, Complex Variable, Laplace and Z-Transformation, Matrices, Vectors and Fourier Analysis</p>
+                    <div class="timeline-meta">
+                        <div class="timeline-meta-item">
+                            <span class="icon">🎓</span>
+                            <span>Bachelor's Degree</span>
+                        </div>
+                        <div class="timeline-meta-item">
+                            <span class="icon">📍</span>
+                            <span>AIUB, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2 class="section-title">Online Programs, Courses & Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">🤖</div>
+                        <h3>Machine Learning Specialization</h3>
+                        <div class="certification-provider">Stanford Online & DeepLearning.AI</div>
+                    </div>
+                    <div class="certification-body">
+                        <p>Comprehensive program covering supervised learning, unsupervised learning, and best practices in machine learning.</p>
+                        <div class="certification-footer">
+                            <div class="certification-tags">
+                                <span class="certification-tag">ML</span>
+                                <span class="certification-tag">Neural Networks</span>
+                                <span class="certification-tag">Python</span>
+                            </div>
+                            <a href="#" class="certification-view-btn" target="_blank">View Certificate →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">🧠</div>
+                        <h3>Deep Learning Specialization</h3>
+                        <div class="certification-provider">DeepLearning.AI</div>
+                    </div>
+                    <div class="certification-body">
+                        <p>Advanced deep learning concepts including CNNs, RNNs, LSTMs, attention mechanisms, and transformers.</p>
+                        <div class="certification-footer">
+                            <div class="certification-tags">
+                                <span class="certification-tag">Deep Learning</span>
+                                <span class="certification-tag">CNN</span>
+                                <span class="certification-tag">RNN</span>
+                            </div>
+                            <a href="#" class="certification-view-btn" target="_blank">View Certificate →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">📐</div>
+                        <h3>Mathematics for ML & DS</h3>
+                        <div class="certification-provider">DeepLearning.AI</div>
+                    </div>
+                    <div class="certification-body">
+                        <p>Linear Algebra, Calculus, Probability & Statistics for Machine Learning and Data Science applications.</p>
+                        <div class="certification-footer">
+                            <div class="certification-tags">
+                                <span class="certification-tag">Linear Algebra</span>
+                                <span class="certification-tag">Calculus</span>
+                                <span class="certification-tag">Statistics</span>
+                            </div>
+                            <a href="#" class="certification-view-btn" target="_blank">View Certificate →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">💬</div>
+                        <h3>NLP Specialization</h3>
+                        <div class="certification-provider">DeepLearning.AI</div>
+                    </div>
+                    <div class="certification-body">
+                        <p>Natural Language Processing with Classification, Probabilistic Models, Sequence Models, and Attention Models.</p>
+                        <div class="certification-footer">
+                            <div class="certification-tags">
+                                <span class="certification-tag">NLP</span>
+                                <span class="certification-tag">Transformers</span>
+                                <span class="certification-tag">BERT</span>
+                            </div>
+                            <a href="#" class="certification-view-btn" target="_blank">View Certificate →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">📊</div>
+                        <h3>Google Data Analytics</h3>
+                        <div class="certification-provider">Google</div>
+                    </div>
+                    <div class="certification-body">
+                        <p>Comprehensive data analytics training covering data cleaning, analysis, visualization, and statistical methods.</p>
+                        <div class="certification-footer">
+                            <div class="certification-tags">
+                                <span class="certification-tag">Data Analysis</span>
+                                <span class="certification-tag">SQL</span>
+                                <span class="certification-tag">Tableau</span>
+                            </div>
+                            <a href="#" class="certification-view-btn" target="_blank">View Certificate →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="certification-header">
+                        <div class="certification-icon">🐍</div>
+                        <h3>Python for Everybody</h3>
+                        <div class="certification-provider">University of Michigan</div>
+                    </div>
+                    <div class="certification-body">
+                        <p>Python programming, data structures, web scraping, database management, and data visualization.</p>
+                        <div class="certification-footer">
+                            <div class="certification-tags">
+                                <span class="certification-tag">Python</span>
+                                <span class="certification-tag">Web Scraping</span>
+                                <span class="certification-tag">SQL</span>
+                            </div>
+                            <a href="#" class="certification-view-btn" target="_blank">View Certificate →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <button class="more-certifications-btn" id="moreCertificationsBtn">More Details →</button>
         </section>
 
@@ -2388,91 +3318,151 @@
         <div class="certifications-modal" id="certificationsModal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2>More Training, Certifications & Courses</h2>
+                    <h2>All Certifications & Courses</h2>
                     <button class="close-modal" id="closeCertificationsModal">×</button>
                 </div>
-                <div class="timeline">
-                    <!-- Add all existing certifications plus more details -->
-                    <div class="timeline-item">
-                        <h3>Machine Learning Specialization</h3>
-                        <div class="date">Stanford Online & DeepLearning.AI | Coursera</div>
-                        <p><strong>Skills gained:</strong> Supervised Learning, Unsupervised Learning, Neural Networks, Decision Trees, Recommender Systems, Best Practices</p>
-                        <p><strong>Projects:</strong> Linear Regression, Logistic Regression, Neural Networks, Anomaly Detection, Recommender Systems</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
+                
+                <div class="certification-detail-card">
+                    <div class="certification-detail-header">
+                        <div class="certification-detail-icon">🤖</div>
+                        <div class="certification-detail-info">
+                            <h3>Machine Learning Specialization</h3>
+                            <div class="certification-detail-provider">Stanford Online & DeepLearning.AI | Coursera</div>
+                        </div>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <h3>Deep Learning Specialization</h3>
-                        <div class="date">DeepLearning.AI | Coursera</div>
-                        <p><strong>Skills gained:</strong> Deep Learning, CNNs, RNNs, LSTMs, Attention Mechanisms, Transformers, Hyperparameter Tuning</p>
-                        <p><strong>Courses:</strong> Neural Networks and Deep Learning | Improving Deep Neural Networks | Structuring Machine Learning Projects | Convolutional Neural Networks | Sequence Models</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3>Mathematics for Machine Learning and Data Science Specialization</h3>
-                        <div class="date">DeepLearning.AI | Coursera</div>
-                        <p><strong>Skills gained:</strong> Linear Algebra, Calculus, Probability, Statistics, Matrix Operations, Eigenvalues, Gradient Descent</p>
-                        <p><strong>Courses:</strong> Linear Algebra for Machine Learning and Data Science | Calculus for Machine Learning and Data Science | Probability & Statistics for Machine Learning & Data Science</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3>Natural Language Processing Specialization</h3>
-                        <div class="date">DeepLearning.AI | Coursera</div>
-                        <p><strong>Skills gained:</strong> Sentiment Analysis, Word Embeddings, Sequence Models, Attention Models, Transformers, BERT</p>
-                        <p><strong>Courses:</strong> NLP with Classification and Vector Spaces | NLP with Probabilistic Models | NLP with Sequence Models | NLP with Attention Models</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3>Google Data Analytics Professional Certificate</h3>
-                        <div class="date">Google | Coursera</div>
-                        <p><strong>Skills gained:</strong> Data Cleaning, Data Analysis, Data Visualization, SQL, R Programming, Tableau, Spreadsheets</p>
-                        <p><strong>Projects:</strong> Case studies on real-world data analysis scenarios, creating dashboards and presentations</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3>Python for Everybody Specialization</h3>
-                        <div class="date">University of Michigan | Coursera</div>
-                        <p><strong>Skills gained:</strong> Python Programming, Data Structures, Web Scraping, Database Management, Data Visualization</p>
-                        <p><strong>Courses:</strong> Programming for Everybody | Python Data Structures | Using Python to Access Web Data | Using Databases with Python | Capstone: Retrieving, Processing, and Visualizing Data with Python</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3>TensorFlow Developer Certificate</h3>
-                        <div class="date">Google | TensorFlow Certificate Program</div>
-                        <p><strong>Skills gained:</strong> TensorFlow, Keras, Neural Networks, CNNs, RNNs, Image Classification, NLP, Time Series</p>
-                        <p><strong>Projects:</strong> Computer Vision, Natural Language Processing, Time Series Forecasting</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3>Quantum Computing Fundamentals</h3>
-                        <div class="date">MIT | edX</div>
-                        <p><strong>Skills gained:</strong> Quantum Mechanics, Quantum Algorithms, Qiskit, Quantum Gates, Quantum Entanglement</p>
-                        <p><strong>Topics:</strong> Quantum Information Theory, Quantum Machine Learning, Quantum Cryptography</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3>IBM Data Science Professional Certificate</h3>
-                        <div class="date">IBM | Coursera</div>
-                        <p><strong>Skills gained:</strong> Python, SQL, Data Visualization, Machine Learning, Statistical Analysis, Jupyter Notebooks</p>
-                        <p><strong>Tools:</strong> Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, SQL</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h3>Advanced Computer Vision with TensorFlow</h3>
-                        <div class="date">DeepLearning.AI | Coursera</div>
-                        <p><strong>Skills gained:</strong> Object Detection, Image Segmentation, Transfer Learning, GANs, Style Transfer</p>
-                        <p><strong>Techniques:</strong> YOLO, R-CNN, U-Net, ResNet, VGG</p>
-                        <p><strong>Certificate:</strong> <a href="#" style="color: var(--accent-primary);" target="_blank">View Certificate</a></p>
+                    <div class="certification-detail-body">
+                        <div class="certification-detail-section">
+                            <h4>📚 Skills Gained</h4>
+                            <div class="certification-skills">
+                                <span class="certification-skill-tag">Supervised Learning</span>
+                                <span class="certification-skill-tag">Unsupervised Learning</span>
+                                <span class="certification-skill-tag">Neural Networks</span>
+                                <span class="certification-skill-tag">Decision Trees</span>
+                                <span class="certification-skill-tag">Recommender Systems</span>
+                                <span class="certification-skill-tag">Best Practices</span>
+                            </div>
+                        </div>
+                        <div class="certification-detail-section">
+                            <h4>🎯 Projects Completed</h4>
+                            <ul>
+                                <li>Linear Regression for Housing Price Prediction</li>
+                                <li>Logistic Regression for Classification</li>
+                                <li>Neural Networks for Image Recognition</li>
+                                <li>Anomaly Detection System</li>
+                                <li>Movie Recommender System</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="certification-link" target="_blank">
+                            View Certificate →
+                        </a>
                     </div>
                 </div>
+
+                <div class="certification-detail-card">
+                    <div class="certification-detail-header">
+                        <div class="certification-detail-icon">🧠</div>
+                        <div class="certification-detail-info">
+                            <h3>Deep Learning Specialization</h3>
+                            <div class="certification-detail-provider">DeepLearning.AI | Coursera</div>
+                        </div>
+                    </div>
+                    <div class="certification-detail-body">
+                        <div class="certification-detail-section">
+                            <h4>📚 Skills Gained</h4>
+                            <div class="certification-skills">
+                                <span class="certification-skill-tag">Deep Learning</span>
+                                <span class="certification-skill-tag">CNNs</span>
+                                <span class="certification-skill-tag">RNNs</span>
+                                <span class="certification-skill-tag">LSTMs</span>
+                                <span class="certification-skill-tag">Attention</span>
+                                <span class="certification-skill-tag">Transformers</span>
+                            </div>
+                        </div>
+                        <div class="certification-detail-section">
+                            <h4>📖 Courses</h4>
+                            <ul>
+                                <li>Neural Networks and Deep Learning</li>
+                                <li>Improving Deep Neural Networks: Hyperparameter Tuning</li>
+                                <li>Structuring Machine Learning Projects</li>
+                                <li>Convolutional Neural Networks</li>
+                                <li>Sequence Models</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="certification-link" target="_blank">
+                            View Certificate →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-detail-card">
+                    <div class="certification-detail-header">
+                        <div class="certification-detail-icon">📐</div>
+                        <div class="certification-detail-info">
+                            <h3>Mathematics for Machine Learning and Data Science</h3>
+                            <div class="certification-detail-provider">DeepLearning.AI | Coursera</div>
+                        </div>
+                    </div>
+                    <div class="certification-detail-body">
+                        <div class="certification-detail-section">
+                            <h4>📚 Skills Gained</h4>
+                            <div class="certification-skills">
+                                <span class="certification-skill-tag">Linear Algebra</span>
+                                <span class="certification-skill-tag">Calculus</span>
+                                <span class="certification-skill-tag">Probability</span>
+                                <span class="certification-skill-tag">Statistics</span>
+                                <span class="certification-skill-tag">Optimization</span>
+                            </div>
+                        </div>
+                        <div class="certification-detail-section">
+                            <h4>📖 Courses</h4>
+                            <ul>
+                                <li>Linear Algebra for Machine Learning and Data Science</li>
+                                <li>Calculus for Machine Learning and Data Science</li>
+                                <li>Probability & Statistics for Machine Learning & Data Science</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="certification-link" target="_blank">
+                            View Certificate →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="certification-detail-card">
+                    <div class="certification-detail-header">
+                        <div class="certification-detail-icon">💬</div>
+                        <div class="certification-detail-info">
+                            <h3>Natural Language Processing Specialization</h3>
+                            <div class="certification-detail-provider">DeepLearning.AI | Coursera</div>
+                        </div>
+                    </div>
+                    <div class="certification-detail-body">
+                        <div class="certification-detail-section">
+                            <h4>📚 Skills Gained</h4>
+                            <div class="certification-skills">
+                                <span class="certification-skill-tag">Sentiment Analysis</span>
+                                <span class="certification-skill-tag">Word Embeddings</span>
+                                <span class="certification-skill-tag">Sequence Models</span>
+                                <span class="certification-skill-tag">Attention</span>
+                                <span class="certification-skill-tag">Transformers</span>
+                                <span class="certification-skill-tag">BERT</span>
+                            </div>
+                        </div>
+                        <div class="certification-detail-section">
+                            <h4>📖 Courses</h4>
+                            <ul>
+                                <li>NLP with Classification and Vector Spaces</li>
+                                <li>NLP with Probabilistic Models</li>
+                                <li>NLP with Sequence Models</li>
+                                <li>NLP with Attention Models</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="certification-link" target="_blank">
+                            View Certificate →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Add more certification detail cards as needed -->
             </div>
         </div>
     </section>
