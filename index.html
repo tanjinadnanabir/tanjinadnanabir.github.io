@@ -49,26 +49,6 @@
             height: 100%;
         }
 
-        /* Navigation */
-        /* nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 15, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem 5%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
-        }
-
-        nav .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        } */
-
         /* Navigation - Enhanced & Responsive */
         nav {
             position: fixed;
@@ -169,38 +149,6 @@
             z-index: 1;
         }
 
-        /* .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        } */
-
         .nav-links {
             display: flex;
             gap: 0.3rem;
@@ -269,20 +217,6 @@
             color: var(--accent-primary);
             background: rgba(0, 245, 255, 0.05);
         }
-
-        /* .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--accent-primary);
-            transition: all 0.3s;
-        } */
 
         .menu-toggle {
             display: none;
@@ -1568,19 +1502,6 @@
             gap: 2rem;
         }
 
-        /* .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 2rem 2.5rem;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid rgba(0, 245, 255, 0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        } */
-
         .contact-item {
             display: flex;
             flex-direction: column;
@@ -1712,18 +1633,6 @@
             color: white;
             transform: translateY(-5px) rotate(360deg);
         }
-
-        /* Footer */
-        /* footer {
-            background: var(--bg-secondary);
-            padding: 2rem 5%;
-            text-align: center;
-            border-top: 1px solid rgba(0, 245, 255, 0.1);
-        }
-
-        footer p {
-            color: var(--text-secondary);
-        } */
 
         /* Footer - Simplified & Beautiful */
         footer {
@@ -3441,79 +3350,79 @@
     </section>
 
     <!-- Experience Section -->
-        <section id="experience">
-            <div class="section-header-wrapper">
-                <div class="section-icon">💼</div>
-                <h2 class="section-title">Experience</h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date-badge">
-                        <div class="year">2023</div>
-                        <div class="status">2024</div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">👨‍🏫</div>
-                        <h3>IT Executive</h3>
-                        <p>Troubleshooting computer issues and providing technical support to company employees, clients, and other system users; developing and maintaining website; email management; cloud management; preparing regular reports on expenses and IT budgets; organizing systems for important and confidential company documents; preparing reports and presentations with statistical data.</p>
-                        <div class="timeline-meta">
-                            <div class="timeline-meta-item">
-                                <span class="icon">🏫</span>
-                                <span>Deft Engineering</span>
-                            </div>
-                        </div>
-                    </div>
+    <section id="experience">
+        <div class="section-header-wrapper">
+            <div class="section-icon">💼</div>
+            <h2 class="section-title">Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date-badge">
+                    <div class="year">2021</div>
+                    <div class="status">Present</div>
                 </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date-badge">
-                        <div class="year">2021</div>
-                        <div class="status">Present</div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">👨‍🏫</div>
-                        <h3>STEM Teaching & Training</h3>
-                        <p>I specialise in teaching students in various STEM subjects, including mathematics, physics, chemistry, biology, computer science, and engineering. My approach emphasizes fostering a deep understanding of fundamental concepts, problem-solving skills, and critical thinking abilities. I create personalized lesson plans tailored to each student's learning style and academic goals, ensuring that they receive targeted support and guidance.</p>
-                        <div class="timeline-meta">
-                            <div class="timeline-meta-item">
-                                <span class="icon">⏱️</span>
-                                <span>5+ Years Experience</span>
-                            </div>
-                            <div class="timeline-meta-item">
-                                <span class="icon">🎯</span>
-                                <span>Multiple STEM Subjects</span>
-                            </div>
-                            <div class="timeline-meta-item">
-                                <span class="icon">📚</span>
-                                <span>Personalized Curriculum</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date-badge">
-                        <div class="year">2017</div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-icon">🔬</div>
-                        <h3>Teaching Assistant</h3>
-                        <p>Artificial Intelligence and Expert Systems Lab, Department of Computer Science</p>
-                        <div class="timeline-meta">
-                            <div class="timeline-meta-item">
-                                <span class="icon">🏫</span>
-                                <span>American International University - Bangladesh</span>
-                            </div>
-                            <div class="timeline-meta-item">
-                                <span class="icon">🤖</span>
-                                <span>AI & Expert Systems</span>
-                            </div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">👨‍🏫</div>
+                    <h3>IT Executive</h3>
+                    <p>Troubleshooting computer issues and providing technical support to company employees, clients, and other system users; developing and maintaining website; email management; cloud management; preparing regular reports on expenses and IT budgets; organizing systems for important and confidential company documents; preparing reports and presentations with statistical data.</p>
+                    <div class="timeline-meta">
+                        <div class="timeline-meta-item">
+                            <span class="icon">🏫</span>
+                            <span>Deft Engineering</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date-badge">
+                    <div class="year">2021</div>
+                    <div class="status">Present</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">👨‍🏫</div>
+                    <h3>STEM Teaching & Training</h3>
+                    <p>I specialise in teaching students in various STEM subjects, including mathematics, physics, chemistry, biology, computer science, and engineering. My approach emphasizes fostering a deep understanding of fundamental concepts, problem-solving skills, and critical thinking abilities. I create personalized lesson plans tailored to each student's learning style and academic goals, ensuring that they receive targeted support and guidance.</p>
+                    <div class="timeline-meta">
+                        <div class="timeline-meta-item">
+                            <span class="icon">⏱️</span>
+                            <span>5+ Years Experience</span>
+                        </div>
+                        <div class="timeline-meta-item">
+                            <span class="icon">🎯</span>
+                            <span>Multiple STEM Subjects</span>
+                        </div>
+                        <div class="timeline-meta-item">
+                            <span class="icon">📚</span>
+                            <span>Personalized Curriculum</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date-badge">
+                    <div class="year">2017</div>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-icon">🔬</div>
+                    <h3>Teaching Assistant</h3>
+                    <p>Artificial Intelligence and Expert Systems Lab, Department of Computer Science</p>
+                    <div class="timeline-meta">
+                        <div class="timeline-meta-item">
+                            <span class="icon">🏫</span>
+                            <span>American International University - Bangladesh</span>
+                        </div>
+                        <div class="timeline-meta-item">
+                            <span class="icon">🤖</span>
+                            <span>AI & Expert Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Education Section -->
     <section id="education">
@@ -3581,7 +3490,7 @@
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-date-badge">
-                    <div class="year">2021</div>
+                    <div class="year">2022</div>
                     <!-- <div class="status">2022</div> -->
                 </div>
                 <div class="timeline-content">
@@ -3647,131 +3556,131 @@
         </div>
     </section>
 
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <div class="section-header-wrapper">
-                <div class="section-icon">🏅</div>
-                <h2 class="section-title">Online Programs, Courses & Certifications</h2>
-            </div>
-            <!-- <h2 class="section-title">Online Programs, Courses & Certifications</h2> -->
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-icon">🤖</div>
-                        <h3>Machine Learning Specialization</h3>
-                        <div class="certification-provider">Stanford Online & DeepLearning.AI</div>
-                    </div>
-                    <div class="certification-body">
-                        <p>Comprehensive program covering supervised learning, unsupervised learning, and best practices in machine learning.</p>
-                        <div class="certification-footer">
-                            <div class="certification-tags">
-                                <span class="certification-tag">ML</span>
-                                <span class="certification-tag">Neural Networks</span>
-                                <span class="certification-tag">Python</span>
-                            </div>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/NSWBU7MN6K94" class="certification-view-btn" target="_blank">View Certificate →</a>
-                        </div>
-                    </div>
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="section-header-wrapper">
+            <div class="section-icon">🏅</div>
+            <h2 class="section-title">Online Programs, Courses & Certifications</h2>
+        </div>
+        <!-- <h2 class="section-title">Online Programs, Courses & Certifications</h2> -->
+        <div class="certifications-grid">
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">🤖</div>
+                    <h3>Machine Learning Specialization</h3>
+                    <div class="certification-provider">Stanford Online & DeepLearning.AI</div>
                 </div>
-
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-icon">🧠</div>
-                        <h3>Deep Learning Specialization</h3>
-                        <div class="certification-provider">DeepLearning.AI</div>
-                    </div>
-                    <div class="certification-body">
-                        <p>Advanced deep learning concepts including CNNs, RNNs, LSTMs, attention mechanisms, and transformers.</p>
-                        <div class="certification-footer">
-                            <div class="certification-tags">
-                                <span class="certification-tag">Deep Learning</span>
-                                <span class="certification-tag">CNN</span>
-                                <span class="certification-tag">RNN</span>
-                            </div>
-                            <a href="https://www.credly.com/badges/c3a826e4-8041-45e1-9d72-8460ef702501/public_url" class="certification-view-btn" target="_blank">View Certificate →</a>
+                <div class="certification-body">
+                    <p>Comprehensive program covering supervised learning, unsupervised learning, and best practices in machine learning.</p>
+                    <div class="certification-footer">
+                        <div class="certification-tags">
+                            <span class="certification-tag">ML</span>
+                            <span class="certification-tag">Neural Networks</span>
+                            <span class="certification-tag">Python</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-icon">📐</div>
-                        <h3>Mathematics for ML & DS</h3>
-                        <div class="certification-provider">DeepLearning.AI</div>
-                    </div>
-                    <div class="certification-body">
-                        <p>Linear Algebra, Calculus, Probability & Statistics for Machine Learning and Data Science applications.</p>
-                        <div class="certification-footer">
-                            <div class="certification-tags">
-                                <span class="certification-tag">Linear Algebra</span>
-                                <span class="certification-tag">Calculus</span>
-                                <span class="certification-tag">Statistics</span>
-                            </div>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/WYL5YL8YQV62" class="certification-view-btn" target="_blank">View Certificate →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-icon">💬</div>
-                        <h3>NLP Specialization</h3>
-                        <div class="certification-provider">DeepLearning.AI</div>
-                    </div>
-                    <div class="certification-body">
-                        <p>Natural Language Processing with Classification, Probabilistic Models, Sequence Models, and Attention Models.</p>
-                        <div class="certification-footer">
-                            <div class="certification-tags">
-                                <span class="certification-tag">NLP</span>
-                                <span class="certification-tag">Transformers</span>
-                                <span class="certification-tag">BERT</span>
-                            </div>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/7FBZQDX4DA9A" class="certification-view-btn" target="_blank">View Certificate →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-icon">📊</div>
-                        <h3>Google Data Analytics</h3>
-                        <div class="certification-provider">Google</div>
-                    </div>
-                    <div class="certification-body">
-                        <p>Comprehensive data analytics training covering data cleaning, analysis, visualization, and statistical methods.</p>
-                        <div class="certification-footer">
-                            <div class="certification-tags">
-                                <span class="certification-tag">Data Analysis</span>
-                                <span class="certification-tag">SQL</span>
-                                <span class="certification-tag">Tableau</span>
-                            </div>
-                            <a href="https://www.credly.com/badges/76032062-286e-40ce-a3de-a6df4b4c483d/public_url" class="certification-view-btn" target="_blank">View Certificate →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="certification-card">
-                    <div class="certification-header">
-                        <div class="certification-icon">🐍</div>
-                        <h3>Python for Everybody</h3>
-                        <div class="certification-provider">University of Michigan</div>
-                    </div>
-                    <div class="certification-body">
-                        <p>Python programming, data structures, web scraping, database management, and data visualization.</p>
-                        <div class="certification-footer">
-                            <div class="certification-tags">
-                                <span class="certification-tag">Python</span>
-                                <span class="certification-tag">Web Scraping</span>
-                                <span class="certification-tag">SQL</span>
-                            </div>
-                            <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/PNUMXMSWENMM" class="certification-view-btn" target="_blank">View Certificate →</a>
-                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/NSWBU7MN6K94" class="certification-view-btn" target="_blank">View Certificate →</a>
                     </div>
                 </div>
             </div>
 
-            <button class="more-certifications-btn" id="moreCertificationsBtn">More Details →</button>
-        </section>
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">🧠</div>
+                    <h3>Deep Learning Specialization</h3>
+                    <div class="certification-provider">DeepLearning.AI</div>
+                </div>
+                <div class="certification-body">
+                    <p>Advanced deep learning concepts including CNNs, RNNs, LSTMs, attention mechanisms, and transformers.</p>
+                    <div class="certification-footer">
+                        <div class="certification-tags">
+                            <span class="certification-tag">Deep Learning</span>
+                            <span class="certification-tag">CNN</span>
+                            <span class="certification-tag">RNN</span>
+                        </div>
+                        <a href="https://www.credly.com/badges/c3a826e4-8041-45e1-9d72-8460ef702501/public_url" class="certification-view-btn" target="_blank">View Certificate →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">📐</div>
+                    <h3>Mathematics for ML & DS</h3>
+                    <div class="certification-provider">DeepLearning.AI</div>
+                </div>
+                <div class="certification-body">
+                    <p>Linear Algebra, Calculus, Probability & Statistics for Machine Learning and Data Science applications.</p>
+                    <div class="certification-footer">
+                        <div class="certification-tags">
+                            <span class="certification-tag">Linear Algebra</span>
+                            <span class="certification-tag">Calculus</span>
+                            <span class="certification-tag">Statistics</span>
+                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/WYL5YL8YQV62" class="certification-view-btn" target="_blank">View Certificate →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">💬</div>
+                    <h3>NLP Specialization</h3>
+                    <div class="certification-provider">DeepLearning.AI</div>
+                </div>
+                <div class="certification-body">
+                    <p>Natural Language Processing with Classification, Probabilistic Models, Sequence Models, and Attention Models.</p>
+                    <div class="certification-footer">
+                        <div class="certification-tags">
+                            <span class="certification-tag">NLP</span>
+                            <span class="certification-tag">Transformers</span>
+                            <span class="certification-tag">BERT</span>
+                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/7FBZQDX4DA9A" class="certification-view-btn" target="_blank">View Certificate →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">📊</div>
+                    <h3>Google Data Analytics</h3>
+                    <div class="certification-provider">Google</div>
+                </div>
+                <div class="certification-body">
+                    <p>Comprehensive data analytics training covering data cleaning, analysis, visualization, and statistical methods.</p>
+                    <div class="certification-footer">
+                        <div class="certification-tags">
+                            <span class="certification-tag">Data Analysis</span>
+                            <span class="certification-tag">SQL</span>
+                            <span class="certification-tag">Tableau</span>
+                        </div>
+                        <a href="https://www.credly.com/badges/76032062-286e-40ce-a3de-a6df4b4c483d/public_url" class="certification-view-btn" target="_blank">View Certificate →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certification-card">
+                <div class="certification-header">
+                    <div class="certification-icon">🐍</div>
+                    <h3>Python for Everybody</h3>
+                    <div class="certification-provider">University of Michigan</div>
+                </div>
+                <div class="certification-body">
+                    <p>Python programming, data structures, web scraping, database management, and data visualization.</p>
+                    <div class="certification-footer">
+                        <div class="certification-tags">
+                            <span class="certification-tag">Python</span>
+                            <span class="certification-tag">Web Scraping</span>
+                            <span class="certification-tag">SQL</span>
+                        </div>
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/PNUMXMSWENMM" class="certification-view-btn" target="_blank">View Certificate →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="more-certifications-btn" id="moreCertificationsBtn">More Details →</button>
+    </section>
 
         <!-- Certifications Modal -->
         <div class="certifications-modal" id="certificationsModal">
@@ -3805,10 +3714,10 @@
                     <div class="certification-header">
                         <div class="certification-icon">🧠</div>
                         <h3>Generative AI with LLM</h3>
-                        <div class="certification-provider">DeepLearning.AI</div>
+                        <div class="certification-provider">DeepLearning.AI | AWS</div>
                     </div>
                     <div class="certification-body">
-                        <p>Generative AI Topics: GenAI Project Life Cycle, Fine Tuning, LLMs, RLHF etc.</p>
+                        <p>Generative AI Topics: GenAI Project Life Cycle, Fine Tuning LLMs, RLHF etc.</p>
                         <div class="certification-footer">
                             <div class="certification-tags">
                                 <span class="certification-tag">Deep Learning</span>
@@ -3846,7 +3755,7 @@
                         <div class="certification-provider">QURECA</div>
                     </div>
                     <div class="certification-body">
-                        <p>Advanced End-to-end Quantum Computing Technical Course - ADEQUATE</p>
+                        <p>Advanced End-to-end Quantum Computing Technical Course - ADEQUATE | Complete overview of the established quantum algorithms and computational techniques</p>
                         <div class="certification-footer">
                             <div class="certification-tags">
                                 <span class="certification-tag">Quantum Computing</span>
@@ -3922,7 +3831,7 @@
                         <div class="certification-provider">IBM Quantum | Qiskit</div>
                     </div>
                     <div class="certification-body">
-                        <p>Qiskit Global Summer School 2023: Theory To Implementation</p>
+                        <p>Qiskit Global Summer School 2023: Theory To Implementation | Two-week intensive virtual program focused on the "Theory to Implementation" theme | 12 lectures & 5 labs</p>
                         <div class="certification-footer">
                             <div class="certification-tags">
                                 <span class="certification-tag">Python</span>
@@ -3941,7 +3850,7 @@
                         <div class="certification-provider">IBM Quantum | Qiskit</div>
                     </div>
                     <div class="certification-body">
-                        <p>Qiskit Global Summer School 2021: Quantum Machine Learning </p>
+                        <p>Qiskit Global Summer School 2021: Quantum Machine Learning | Two-week intensive course focused on QML | QML fundamentals, state-of-the-art algorithms, and implementation on simulators and hardware</p>
                         <div class="certification-footer">
                             <div class="certification-tags">
                                 <span class="certification-tag">Python</span>
@@ -3998,7 +3907,7 @@
                         <div class="certification-provider">University of Washington</div>
                     </div>
                     <div class="certification-body">
-                        <p>Intro to AI</p>
+                        <p>Intro to computational methods for understanding what nervous systems do and for determining how they function | Computational principles governing various aspects of vision, sensory-motor control, learning, and memory | Representation of information by spiking neurons, processing of information in neural networks, and algorithms for adaptation and learning | Matlab/Octave/Python demonstrations and exercises to gain a deeper understanding of concepts and methods</p>
                         <div class="certification-footer">
                             <div class="certification-tags">
                                 <span class="certification-tag">Neuroscience</span>
@@ -4036,7 +3945,7 @@
                         <div class="certification-provider">University of Helsinki</div>
                     </div>
                     <div class="certification-body">
-                        <p>Intro to AI</p>
+                        <p>An Intro to AI is a free online course for everyone interested in learning what AI is, what is possible (and not possible) with AI, and how it affects our lives.</p>
                         <div class="certification-footer">
                             <div class="certification-tags">
                                 <span class="certification-tag">Deep Learning</span>
@@ -4055,7 +3964,7 @@
                         <div class="certification-provider">Innovative Skills</div>
                     </div>
                     <div class="certification-body">
-                        <p>Fundamental AI Concepts, Machine Learning, Deep Learning, NLP, LLM and Generative AI</p>
+                        <p>Fundamental AI Concepts, Machine Learning, Deep Learning, NLP, LLM and Generative AI with hands-on labs.</p>
                         <div class="certification-footer">
                             <div class="certification-tags">
                                 <span class="certification-tag">Deep Learning</span>
@@ -4454,7 +4363,7 @@
             </p> -->
             <!-- <div class="footer-divider"></div> -->
             <p class="footer-copyright">
-                &copy; 2024 Tanjin Adnan Abir. All rights reserved.
+                &copy; 2025 Tanjin Adnan Abir. All rights reserved.
             </p>
         </div>
     </footer>
