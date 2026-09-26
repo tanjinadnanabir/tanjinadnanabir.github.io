@@ -9,24 +9,82 @@
 <style>
 /* ─── Variables (from 1.html) ─── */
 :root {
-  --bg-deep: #060a12;
+  --bg-deep: #070b14;
   --bg-base: #0b1120;
   --bg-card: #0f1829;
   --bg-card2: #111d30;
-  --border: rgba(56,189,248,0.12);
-  --border-bright: rgba(56,189,248,0.28);
+  --bg-deep-rgb: 7,11,20;
+
   --cyan: #38bdf8;
   --cyan-dim: #0ea5e9;
-  --cyan-glow: rgba(56,189,248,0.15);
+  --cyan-bright: #7dd3fc;
+  --cyan-rgb: 56,189,248;
+  --cyan-glow: rgba(var(--cyan-rgb),0.15);
+
   --amber: #f59e0b;
   --amber-dim: #d97706;
-  --amber-glow: rgba(245,158,11,0.12);
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
+  --amber-rgb: 245,158,11;
+  --amber-glow: rgba(var(--amber-rgb),0.12);
+
+  --violet: #8b5cf6;
+  --violet-rgb: 139,92,246;
+  --magenta: #d946ef;
+  --magenta-rgb: 217,70,239;
+  --green: #34d399;
+  --green-rgb: 52,211,153;
+
+  --border: rgba(var(--cyan-rgb),0.14);
+  --border-bright: rgba(var(--cyan-rgb),0.30);
+  --nav-bg: rgba(var(--bg-deep-rgb),0.85);
+
+  --text-primary: #e7ecf3;
+  --text-secondary: #9aa8bd;
   --text-dim: #64748b;
+
+  --shadow-soft: 0 10px 40px rgba(0,0,0,0.35);
   --serif: 'Crimson Pro', Georgia, serif;
   --sans: 'Inter', sans-serif;
   --mono: 'JetBrains Mono', monospace;
+
+  color-scheme: dark;
+}
+
+/* ─── Light theme ─── */
+:root[data-theme="light"] {
+  --bg-deep: #f5f7fb;
+  --bg-base: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card2: #f1f5f9;
+  --bg-deep-rgb: 245,247,251;
+
+  --cyan: #2563eb;
+  --cyan-dim: #1d4ed8;
+  --cyan-bright: #3b82f6;
+  --cyan-rgb: 37,99,235;
+  --cyan-glow: rgba(var(--cyan-rgb),0.10);
+
+  --amber: #b45309;
+  --amber-dim: #92400e;
+  --amber-rgb: 180,83,9;
+  --amber-glow: rgba(var(--amber-rgb),0.10);
+
+  --violet: #7c3aed;
+  --violet-rgb: 124,58,237;
+  --magenta: #a21caf;
+  --magenta-rgb: 162,28,175;
+  --green: #059669;
+  --green-rgb: 5,150,105;
+
+  --border: rgba(15,23,42,0.10);
+  --border-bright: rgba(var(--cyan-rgb),0.35);
+  --nav-bg: rgba(255,255,255,0.85);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-dim: #64748b;
+
+  --shadow-soft: 0 10px 30px rgba(15,23,42,0.08);
+  color-scheme: light;
 }
 
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
@@ -52,7 +110,7 @@ body::before {
 nav {
   position:fixed; top:0; left:0; right:0;
   z-index:100;
-  background: rgba(6,10,18,0.85);
+  background: rgba(var(--bg-deep-rgb),0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   padding: 0 2rem;
@@ -69,21 +127,21 @@ nav {
   z-index: 201;
   padding: 0.35rem 0.85rem;
   border-radius: 8px;
-  border: 1px solid rgba(56,189,248,0.35);
-  background: linear-gradient(135deg, rgba(56,189,248,0.1) 0%, rgba(217,70,239,0.08) 100%);
+  border: 1px solid rgba(var(--cyan-rgb),0.35);
+  background: linear-gradient(135deg, rgba(var(--cyan-rgb),0.1) 0%, rgba(var(--magenta-rgb),0.08) 100%);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  background-image: linear-gradient(135deg, #38bdf8 0%, #a78bfa 50%, #d946ef 100%);
+  background-image: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 50%, var(--magenta) 100%);
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease;
-  box-shadow: 0 0 12px rgba(56,189,248,0.15), inset 0 0 12px rgba(56,189,248,0.05);
+  box-shadow: 0 0 12px rgba(var(--cyan-rgb),0.15), inset 0 0 12px rgba(var(--cyan-rgb),0.05);
 }
 .nav-logo::before {
   content: '';
   position: absolute; inset: 0;
   border-radius: 8px;
-  background: linear-gradient(135deg, rgba(56,189,248,0.12) 0%, rgba(217,70,239,0.1) 100%);
+  background: linear-gradient(135deg, rgba(var(--cyan-rgb),0.12) 0%, rgba(var(--magenta-rgb),0.1) 100%);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -91,7 +149,7 @@ nav {
   content: '';
   position: absolute; inset: -1px;
   border-radius: 9px;
-  background: linear-gradient(135deg, #38bdf8, #a78bfa, #d946ef);
+  background: linear-gradient(135deg, var(--cyan), var(--violet), var(--magenta));
   z-index: -1;
   opacity: 0;
   filter: blur(8px);
@@ -100,13 +158,13 @@ nav {
 .nav-logo:hover::before { opacity: 1; }
 .nav-logo:hover::after  { opacity: 0.6; }
 .nav-logo:hover {
-  border-color: rgba(56,189,248,0.7);
-  box-shadow: 0 0 24px rgba(56,189,248,0.35), 0 0 48px rgba(56,189,248,0.15), inset 0 0 16px rgba(56,189,248,0.1);
+  border-color: rgba(var(--cyan-rgb),0.7);
+  box-shadow: 0 0 24px rgba(var(--cyan-rgb),0.35), 0 0 48px rgba(var(--cyan-rgb),0.15), inset 0 0 16px rgba(var(--cyan-rgb),0.1);
   transform: translateY(-1px);
   letter-spacing: 0.12em;
 }
 .logo-bracket {
-  background-image: linear-gradient(135deg, #38bdf8 0%, #a78bfa 50%, #d946ef 100%);
+  background-image: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 50%, var(--magenta) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -116,7 +174,7 @@ nav {
 }
 .nav-logo:hover .logo-bracket { opacity: 1; }
 .logo-text {
-  background-image: linear-gradient(135deg, #38bdf8 0%, #a78bfa 50%, #d946ef 100%);
+  background-image: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 50%, var(--magenta) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -128,7 +186,7 @@ nav {
   position: fixed;
   width: 80px; height: 80px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(56,189,248,0.5) 0%, rgba(167,139,250,0.3) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--cyan-rgb),0.5) 0%, rgba(var(--violet-rgb),0.3) 40%, transparent 70%);
   pointer-events: none;
   z-index: 999;
   transform: translate(-50%, -50%);
@@ -147,16 +205,16 @@ nav {
 }
 .nav-links a:hover {
   color: var(--cyan);
-  background: rgba(56,189,248,0.08);
-  border: 1px solid rgba(56,189,248,0.2);
+  background: rgba(var(--cyan-rgb),0.08);
+  border: 1px solid rgba(var(--cyan-rgb),0.2);
   padding: calc(0.3rem - 1px) calc(0.85rem - 1px);
 }
 .nav-links a.active {
   color: var(--cyan);
-  background: linear-gradient(135deg, rgba(56,189,248,0.15) 0%, rgba(217,70,239,0.12) 100%);
-  border: 1px solid rgba(56,189,248,0.3);
+  background: linear-gradient(135deg, rgba(var(--cyan-rgb),0.15) 0%, rgba(var(--magenta-rgb),0.12) 100%);
+  border: 1px solid rgba(var(--cyan-rgb),0.3);
   padding: calc(0.3rem - 1px) calc(0.85rem - 1px);
-  box-shadow: 0 0 12px rgba(56,189,248,0.15);
+  box-shadow: 0 0 12px rgba(var(--cyan-rgb),0.15);
 }
 
 /* Hamburger */
@@ -172,12 +230,31 @@ nav {
 .hamburger.open span:nth-child(2) { opacity:0; }
 .hamburger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
 
+/* ─── Theme toggle ─── */
+.theme-toggle {
+  display:flex; align-items:center; justify-content:center;
+  width:34px; height:34px; margin-left:0.75rem;
+  border-radius:8px; border:1px solid var(--border);
+  background: var(--bg-card); color: var(--cyan);
+  cursor:pointer; transition:all 0.2s; flex-shrink:0;
+}
+.theme-toggle:hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 0 12px rgba(var(--cyan-rgb),0.2);
+  transform: translateY(-1px);
+}
+.theme-toggle svg { width:16px; height:16px; fill:currentColor; }
+.theme-toggle .icon-sun { display:none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display:block; }
+.nav-right { display:flex; align-items:center; gap:0.6rem; }
+
 /* ─── Grid BG ─── */
 .grid-bg {
   position:absolute; inset:0;
   background-image:
-    linear-gradient(rgba(56,189,248,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(56,189,248,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(var(--cyan-rgb),0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--cyan-rgb),0.04) 1px, transparent 1px);
   background-size:60px 60px;
   pointer-events:none;
 }
@@ -190,13 +267,13 @@ nav {
 }
 .hero-glow {
   position:absolute; width:700px; height:700px; border-radius:50%;
-  background: radial-gradient(circle, rgba(56,189,248,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--cyan-rgb),0.07) 0%, transparent 70%);
   top:50%; left:50%; transform:translate(-50%,-50%);
   pointer-events:none;
 }
 .hero-glow-amber {
   position:absolute; width:400px; height:400px; border-radius:50%;
-  background: radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--amber-rgb),0.06) 0%, transparent 70%);
   bottom:10%; right:5%; pointer-events:none;
 }
 .hero-inner {
@@ -208,7 +285,7 @@ nav {
 }
 .hero-badge {
   display:inline-flex; align-items:center; gap:0.5rem;
-  background: rgba(56,189,248,0.08); border:1px solid var(--border-bright);
+  background: rgba(var(--cyan-rgb),0.08); border:1px solid var(--border-bright);
   border-radius:100px; padding:0.3rem 0.9rem;
   font-family: var(--mono); font-size:0.72rem;
   color: var(--cyan); letter-spacing:0.06em;
@@ -275,11 +352,11 @@ nav {
   background: linear-gradient(135deg, #070d1a 0%, #0b1525 100%);
   display:flex; align-items:center; justify-content:center;
   position:relative; flex-shrink:0; overflow:hidden;
-  box-shadow: 0 0 60px rgba(56,189,248,0.12), 0 0 0 1px rgba(56,189,248,0.06);
+  box-shadow: 0 0 60px rgba(var(--cyan-rgb),0.12), 0 0 0 1px rgba(var(--cyan-rgb),0.06);
 }
 .hero-avatar::after {
   content:''; position:absolute; inset:0; border-radius:16px;
-  border:1px solid rgba(56,189,248,0.18);
+  border:1px solid rgba(var(--cyan-rgb),0.18);
   pointer-events:none;
 }
 .hero-avatar svg { width:100%; height:100%; }
@@ -293,8 +370,8 @@ nav {
   transition:all 0.2s; border:none; cursor:pointer; display:inline-block;
 }
 .btn-primary:hover {
-  background:#7dd3fc; transform:translateY(-1px);
-  box-shadow: 0 4px 20px rgba(56,189,248,0.3);
+  background: var(--cyan-bright); transform:translateY(-1px);
+  box-shadow: 0 4px 20px rgba(var(--cyan-rgb),0.3);
 }
 .btn-secondary {
   background:transparent; color: var(--text-primary);
@@ -312,7 +389,7 @@ nav {
   padding:0.65rem 1.5rem; border-radius:6px;
   font-size:0.85rem; font-weight:500;
   text-decoration:none; letter-spacing:0.02em;
-  transition:all 0.2s; border:1px solid rgba(245,158,11,0.35);
+  transition:all 0.2s; border:1px solid rgba(var(--amber-rgb),0.35);
   cursor:pointer; display:inline-block;
 }
 .btn-amber:hover { background: var(--amber-glow); transform:translateY(-1px); }
@@ -331,7 +408,7 @@ nav {
   content:''; position:absolute; inset:0;
   background: var(--cyan-glow); opacity:0; transition:opacity 0.25s;
 }
-.btn-more:hover { border-color: var(--cyan); transform:translateY(-1px); box-shadow: 0 0 20px rgba(56,189,248,0.15); }
+.btn-more:hover { border-color: var(--cyan); transform:translateY(-1px); box-shadow: 0 0 20px rgba(var(--cyan-rgb),0.15); }
 .btn-more:hover::before { opacity:1; }
 .btn-more span { position:relative; z-index:1; }
 
@@ -381,7 +458,7 @@ section { position:relative; z-index:1; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(56,189,248,0.4), rgba(167,139,250,0.3), transparent);
+  background: linear-gradient(to right, transparent, rgba(var(--cyan-rgb),0.4), rgba(var(--violet-rgb),0.3), transparent);
 }
 
 /* About intro strip */
@@ -418,32 +495,32 @@ section { position:relative; z-index:1; }
 .about-profile-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(to right, var(--cyan), var(--amber), #d946ef);
+  background: linear-gradient(to right, var(--cyan), var(--amber), var(--magenta));
 }
 .about-profile-card::after {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(56,189,248,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(var(--cyan-rgb),0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 .about-avatar-ring {
   width: 80px; height: 80px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--bg-card2), var(--bg-deep));
-  border: 2px solid rgba(56,189,248,0.35);
+  border: 2px solid rgba(var(--cyan-rgb),0.35);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 1rem;
   font-family: var(--serif);
   font-size: 1.8rem; font-weight: 600;
   color: var(--cyan);
   position: relative;
-  box-shadow: 0 0 24px rgba(56,189,248,0.12);
+  box-shadow: 0 0 24px rgba(var(--cyan-rgb),0.12);
 }
 .about-avatar-ring::after {
   content: '';
   position: absolute; inset: -4px;
   border-radius: 50%;
-  border: 1px dashed rgba(56,189,248,0.25);
+  border: 1px dashed rgba(var(--cyan-rgb),0.25);
   animation: spin 12s linear infinite;
 }
 .about-card-name {
@@ -465,9 +542,9 @@ section { position:relative; z-index:1; }
   border-radius: 100px;
   letter-spacing: 0.04em;
 }
-.about-badge.cyan  { background: rgba(56,189,248,0.1);  border: 1px solid rgba(56,189,248,0.25);  color: var(--cyan-dim); }
-.about-badge.amber { background: rgba(245,158,11,0.1);  border: 1px solid rgba(245,158,11,0.25);  color: var(--amber-dim); }
-.about-badge.violet{ background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.25); color: #a78bfa; }
+.about-badge.cyan  { background: rgba(var(--cyan-rgb),0.1);  border: 1px solid rgba(var(--cyan-rgb),0.25);  color: var(--cyan-dim); }
+.about-badge.amber { background: rgba(var(--amber-rgb),0.1);  border: 1px solid rgba(var(--amber-rgb),0.25);  color: var(--amber-dim); }
+.about-badge.violet{ background: rgba(var(--violet-rgb),0.1); border: 1px solid rgba(var(--violet-rgb),0.25); color: var(--violet); }
 .about-card-location {
   font-size: 0.72rem; color: var(--text-dim);
   display: flex; align-items: center; gap: 0.3rem; justify-content: center;
@@ -497,14 +574,14 @@ section { position:relative; z-index:1; }
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
   opacity: 0; transition: opacity 0.3s;
 }
-.skill-card:nth-child(1)::before { background: linear-gradient(to right, var(--cyan), #a78bfa); }
+.skill-card:nth-child(1)::before { background: linear-gradient(to right, var(--cyan), var(--violet)); }
 .skill-card:nth-child(2)::before { background: linear-gradient(to right, var(--amber), #f97316); }
-.skill-card:nth-child(3)::before { background: linear-gradient(to right, #34d399, var(--cyan)); }
-.skill-card:nth-child(4)::before { background: linear-gradient(to right, #a78bfa, #d946ef); }
+.skill-card:nth-child(3)::before { background: linear-gradient(to right, var(--green), var(--cyan)); }
+.skill-card:nth-child(4)::before { background: linear-gradient(to right, var(--violet), var(--magenta)); }
 .skill-card:hover {
   border-color: var(--border-bright);
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(56,189,248,0.08);
+  box-shadow: 0 16px 40px rgba(var(--cyan-rgb),0.08);
 }
 .skill-card:hover::before { opacity: 1; }
 .skill-card-top {
@@ -515,10 +592,10 @@ section { position:relative; z-index:1; }
   display: flex; align-items: center; justify-content: center;
   font-size: 1.2rem; flex-shrink: 0;
 }
-.skill-card:nth-child(1) .skill-card-icon { background: rgba(56,189,248,0.1);  border: 1px solid rgba(56,189,248,0.2); }
-.skill-card:nth-child(2) .skill-card-icon { background: rgba(245,158,11,0.1);  border: 1px solid rgba(245,158,11,0.2); }
-.skill-card:nth-child(3) .skill-card-icon { background: rgba(52,211,153,0.1);  border: 1px solid rgba(52,211,153,0.2); }
-.skill-card:nth-child(4) .skill-card-icon { background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.2); }
+.skill-card:nth-child(1) .skill-card-icon { background: rgba(var(--cyan-rgb),0.1);  border: 1px solid rgba(var(--cyan-rgb),0.2); }
+.skill-card:nth-child(2) .skill-card-icon { background: rgba(var(--amber-rgb),0.1);  border: 1px solid rgba(var(--amber-rgb),0.2); }
+.skill-card:nth-child(3) .skill-card-icon { background: rgba(var(--green-rgb),0.1);  border: 1px solid rgba(var(--green-rgb),0.2); }
+.skill-card:nth-child(4) .skill-card-icon { background: rgba(var(--violet-rgb),0.1); border: 1px solid rgba(var(--violet-rgb),0.2); }
 .skill-card-title {
   font-size: 0.82rem; font-weight: 700; color: var(--text-primary);
   letter-spacing: 0.01em;
@@ -542,7 +619,7 @@ section { position:relative; z-index:1; }
 }
 .about-stack-title::after {
   content: ''; height: 1px; flex: 1;
-  background: linear-gradient(to right, rgba(245,158,11,0.4), transparent);
+  background: linear-gradient(to right, rgba(var(--amber-rgb),0.4), transparent);
 }
 .stack-grid {
   display: flex; flex-wrap: wrap; gap: 0.6rem;
@@ -575,12 +652,12 @@ section { position:relative; z-index:1; }
 }
 .about-fact-card:hover {
   border-color: var(--border-bright);
-  box-shadow: 0 8px 30px rgba(56,189,248,0.06);
+  box-shadow: 0 8px 30px rgba(var(--cyan-rgb),0.06);
   transform: translateY(-2px);
 }
 .about-fact-icon {
   width: 36px; height: 36px; border-radius: 9px;
-  background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.15);
+  background: rgba(var(--cyan-rgb),0.08); border: 1px solid rgba(var(--cyan-rgb),0.15);
   display: flex; align-items: center; justify-content: center;
   font-size: 1rem; flex-shrink: 0;
 }
@@ -608,6 +685,75 @@ section { position:relative; z-index:1; }
   .about-facts { grid-template-columns: 1fr; }
 }
 
+/* ─── Services ─── */
+#services { background: var(--bg-base); }
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem;
+}
+.service-card {
+  background: var(--bg-card); border:1px solid var(--border);
+  border-radius:10px; padding:1.6rem;
+  transition:all 0.25s; position:relative;
+  overflow:hidden; display:flex; flex-direction:column; text-align:left;
+}
+.service-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background: linear-gradient(to right, transparent, var(--cyan-dim), transparent);
+  opacity:0; transition:opacity 0.3s;
+}
+.service-card:hover {
+  border-color: var(--border-bright); background: var(--bg-card2);
+  transform:translateY(-3px); box-shadow: 0 12px 50px rgba(var(--cyan-rgb),0.08);
+}
+.service-card:hover::before { opacity:1; }
+.service-icon {
+  font-size:1.6rem; margin-bottom:1rem;
+  width:48px; height:48px; background: var(--bg-deep);
+  border:1px solid var(--border); border-radius:8px;
+  display:flex; align-items:center; justify-content:center;
+}
+.service-title {
+  font-size:0.98rem; font-weight:600; color: var(--text-primary);
+  margin-bottom:0.5rem; line-height:1.4;
+}
+.service-desc {
+  font-size:0.82rem; color: var(--text-secondary);
+  line-height:1.6; flex:1; margin-bottom:1.2rem;
+}
+.service-details-btn {
+  align-self:flex-start; background:transparent; color: var(--cyan);
+  border:1px solid var(--border-bright); border-radius:100px;
+  padding:0.4rem 1rem; font-size:0.78rem; font-weight:600;
+  font-family: var(--sans); cursor:pointer; transition:all 0.2s;
+  letter-spacing:0.02em;
+}
+.service-details-btn:hover { background: var(--cyan-glow); border-color: var(--cyan); }
+.service-modal-icon {
+  width:56px; height:56px; border-radius:10px; font-size:1.8rem;
+  background: rgba(var(--cyan-rgb),0.1); border:1px solid rgba(var(--cyan-rgb),0.2);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.service-modal-head { display:flex; align-items:center; gap:1rem; }
+.service-modal-tagline { font-size:0.85rem; color: var(--cyan-dim); margin-top:0.2rem; }
+.service-modal-section-title {
+  font-family: var(--mono); font-size:0.72rem; color: var(--amber);
+  text-transform:uppercase; letter-spacing:0.08em; margin:1.4rem 0 0.6rem;
+}
+.service-modal-list { list-style:none; display:flex; flex-direction:column; gap:0.5rem; }
+.service-modal-list li {
+  font-size:0.88rem; color: var(--text-secondary); line-height:1.5;
+  padding-left:1.3rem; position:relative;
+}
+.service-modal-list li::before {
+  content:'▹'; position:absolute; left:0; color: var(--cyan);
+}
+@media (max-width:900px) {
+  .services-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:640px) {
+  .services-grid { grid-template-columns:1fr; }
+}
+
 /* ─── Projects ─── */
 #projects { background: var(--bg-deep); }
 .projects-grid {
@@ -626,7 +772,7 @@ section { position:relative; z-index:1; }
 }
 .project-card:hover {
   border-color: var(--border-bright); background: var(--bg-card2);
-  transform:translateY(-3px); box-shadow: 0 12px 50px rgba(56,189,248,0.08);
+  transform:translateY(-3px); box-shadow: 0 12px 50px rgba(var(--cyan-rgb),0.08);
 }
 .project-card:hover::before { opacity:1; }
 .project-emoji {
@@ -647,8 +793,8 @@ section { position:relative; z-index:1; }
 .tag {
   font-family: var(--mono); font-size:0.68rem;
   padding:0.2rem 0.55rem;
-  background: rgba(56,189,248,0.08);
-  border:1px solid rgba(56,189,248,0.15);
+  background: rgba(var(--cyan-rgb),0.08);
+  border:1px solid rgba(var(--cyan-rgb),0.15);
   border-radius:100px; color: var(--cyan-dim); letter-spacing:0.03em;
 }
 .project-links { display:flex; gap:0.6rem; }
@@ -658,8 +804,8 @@ section { position:relative; z-index:1; }
 }
 .link-github { background: var(--bg-deep); border:1px solid var(--border-bright); color: var(--text-secondary); }
 .link-github:hover { color: var(--cyan); border-color: var(--cyan); }
-.link-demo { background: rgba(56,189,248,0.1); border:1px solid var(--border-bright); color: var(--cyan); }
-.link-demo:hover { background: rgba(56,189,248,0.2); }
+.link-demo { background: rgba(var(--cyan-rgb),0.1); border:1px solid var(--border-bright); color: var(--cyan); }
+.link-demo:hover { background: rgba(var(--cyan-rgb),0.2); }
 
 /* ─── Timeline (Experience / Education / Training) ─── */
 #experience { background: var(--bg-base); }
@@ -682,7 +828,7 @@ section { position:relative; z-index:1; }
   left:-2rem; top:0.4rem;
   width:9px; height:9px;
   background: var(--cyan); border-radius:50%;
-  box-shadow: 0 0 8px rgba(56,189,248,0.5);
+  box-shadow: 0 0 8px rgba(var(--cyan-rgb),0.5);
 }
 .timeline-year {
   font-family: var(--mono); font-size:0.72rem;
@@ -702,7 +848,7 @@ section { position:relative; z-index:1; }
 .timeline-meta-tag {
   font-family: var(--mono); font-size:0.68rem;
   padding:0.18rem 0.5rem;
-  background: rgba(56,189,248,0.07);
+  background: rgba(var(--cyan-rgb),0.07);
   border:1px solid var(--border);
   border-radius:100px; color: var(--text-dim);
 }
@@ -735,7 +881,7 @@ section { position:relative; z-index:1; }
   font-family: var(--mono); font-size:0.62rem;
   padding:0.15rem 0.45rem;
   background: var(--amber-glow);
-  border:1px solid rgba(245,158,11,0.2);
+  border:1px solid rgba(var(--amber-rgb),0.2);
   border-radius:100px; color: var(--amber-dim);
 }
 .cert-link {
@@ -743,7 +889,7 @@ section { position:relative; z-index:1; }
   font-weight:500; display:inline-flex; align-items:center; gap:0.3rem;
   transition:color 0.2s; margin-top:auto;
 }
-.cert-link:hover { color:#7dd3fc; }
+.cert-link:hover { color: var(--cyan-bright); }
 
 /* ─── Blogs ─── */
 #blogs { background: var(--bg-deep); }
@@ -755,7 +901,7 @@ section { position:relative; z-index:1; }
 }
 .blog-card:hover {
   border-color: var(--border-bright); transform:translateY(-2px);
-  box-shadow: 0 8px 36px rgba(56,189,248,0.06);
+  box-shadow: 0 8px 36px rgba(var(--cyan-rgb),0.06);
 }
 .blog-date {
   font-family: var(--mono); font-size:0.7rem;
@@ -818,6 +964,23 @@ section { position:relative; z-index:1; }
   background: var(--cyan-glow); transform:translateY(-2px);
 }
 
+.quick-contact-row { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.75rem; }
+.quick-contact-btn {
+  display:inline-flex; align-items:center; gap:0.5rem;
+  padding:0.6rem 1.1rem; border-radius:100px;
+  font-size:0.82rem; font-weight:600; text-decoration:none;
+  transition:all 0.2s; letter-spacing:0.01em;
+}
+.quick-contact-btn svg { width:16px; height:16px; fill:currentColor; flex-shrink:0; }
+.quick-contact-whatsapp {
+  background: rgba(37,211,102,0.12); color:#25d366; border:1px solid rgba(37,211,102,0.35);
+}
+.quick-contact-whatsapp:hover { background: rgba(37,211,102,0.2); transform:translateY(-1px); }
+.quick-contact-call {
+  background: var(--cyan-glow); color: var(--cyan); border:1px solid var(--border-bright);
+}
+.quick-contact-call:hover { background: rgba(var(--cyan-rgb),0.2); transform:translateY(-1px); }
+
 .contact-blurb { font-size:0.95rem; color: var(--text-secondary); line-height:1.8; }
 .contact-blurb strong { color: var(--text-primary); }
 .contact-quote {
@@ -851,7 +1014,7 @@ footer {
 /* ─── Modals ─── */
 .modal-overlay {
   position:fixed; inset:0;
-  background: rgba(6,10,18,0.88); backdrop-filter:blur(16px);
+  background: rgba(var(--bg-deep-rgb),0.88); backdrop-filter:blur(16px);
   z-index:500; display:flex; align-items:flex-start; justify-content:center;
   padding:3rem 1.5rem 2rem; opacity:0; pointer-events:none;
   transition:opacity 0.3s; overflow-y:auto;
@@ -864,7 +1027,7 @@ footer {
   transform:translateY(24px);
   transition:transform 0.35s cubic-bezier(0.16,1,0.3,1);
   overflow:hidden;
-  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 60px rgba(56,189,248,0.06);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 60px rgba(var(--cyan-rgb),0.06);
 }
 .modal-overlay.active .modal-box { transform:translateY(0); }
 
@@ -980,7 +1143,7 @@ footer {
   .nav-links {
     position:fixed; top:56px; right:-100%; width:260px;
     height:calc(100vh - 56px);
-    background: rgba(6,10,18,0.97); backdrop-filter:blur(20px);
+    background: rgba(var(--bg-deep-rgb),0.97); backdrop-filter:blur(20px);
     flex-direction:column; padding:1.5rem;
     border-left:1px solid var(--border-bright);
     transition:right 0.35s cubic-bezier(0.16,1,0.3,1);
@@ -1028,6 +1191,7 @@ section { overflow:hidden; position:relative; }
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
@@ -1036,9 +1200,15 @@ section { overflow:hidden; position:relative; }
     <li><a href="#blogs">Blogs</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.05 8.05 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 13.66 12.1 1 1 0 0 0-.02-1.46z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 4a1 1 0 0 1-1-1V1a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1zm0 19a1 1 0 0 1-1-1v-2a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1zM4 13H2a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2zm19 0h-2a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2zM6.34 7.34a1 1 0 0 1-.71-.29L4.22 5.64a1 1 0 1 1 1.41-1.41L7.05 5.64a1 1 0 0 1-.71 1.7zm12.02 12.02a1 1 0 0 1-.71-.29l-1.41-1.41a1 1 0 0 1 1.41-1.41l1.41 1.41a1 1 0 0 1-.7 1.7zM5.64 19.78a1 1 0 0 1-.71-1.71l1.41-1.41a1 1 0 1 1 1.41 1.41l-1.41 1.41a1 1 0 0 1-.7.3zM17.66 7.34a1 1 0 0 1-.71-1.7l1.41-1.41a1 1 0 0 1 1.41 1.41l-1.41 1.41a1 1 0 0 1-.7.29zM12 18a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/></svg>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- ══════════════════════ HERO ══════════════════════ -->
@@ -1650,6 +1820,84 @@ section { overflow:hidden; position:relative; }
 
 <div class="divider"></div>
 
+<!-- ══════════════════════ SERVICES ══════════════════════ -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">What I Offer</div>
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">Practical help spanning applied AI/ML, quantum computing, IT systems, and STEM education — tap any card for the full scope.</p>
+
+    <div class="services-grid" id="servicesGrid">
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <div class="service-title">AI &amp; Machine Learning Development</div>
+        <p class="service-desc">End-to-end ML solutions — from data pipelines to trained, deployable models — for classification, prediction, and NLP/CV tasks.</p>
+        <button class="service-details-btn" data-service="ml">View Details →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <div class="service-title">Deep Learning, NLP &amp; Computer Vision</div>
+        <p class="service-desc">Custom transformer, CNN, and RNN architectures for sentiment analysis, image classification, and language tasks.</p>
+        <button class="service-details-btn" data-service="dl">View Details →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔬</div>
+        <div class="service-title">Quantum Computing &amp; QML Consulting</div>
+        <p class="service-desc">Guidance and hands-on support for quantum machine learning projects, Qiskit-based prototypes, and educational content.</p>
+        <button class="service-details-btn" data-service="quantum">View Details →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🖥️</div>
+        <div class="service-title">IT Infrastructure &amp; Systems Support</div>
+        <p class="service-desc">Network, systems, and IT operations support drawing on hands-on experience as an IT Executive</p>
+        <button class="service-details-btn" data-service="it">View Details →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📚</div>
+        <div class="service-title">STEM Tutoring &amp; Mentorship</div>
+        <p class="service-desc">Private tutoring and mentorship in mathematics, physics, and computer science for school and university students.</p>
+        <button class="service-details-btn" data-service="tutoring">View Details →</button>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✍️</div>
+        <div class="service-title">Research Writing &amp; Technical Documentation</div>
+        <p class="service-desc">Research paper drafting, technical reports, and clear documentation for ML/AI and quantum computing projects.</p>
+        <button class="service-details-btn" data-service="writing">View Details →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Details Modal (shared, populated by JS) -->
+<div class="modal-overlay" id="serviceModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="service-modal-head">
+        <div class="service-modal-icon" id="serviceModalIcon">🤖</div>
+        <div>
+          <h2 id="serviceModalTitle">Service</h2>
+          <div class="service-modal-tagline" id="serviceModalTagline"></div>
+        </div>
+      </div>
+      <button class="modal-close" id="closeServiceModal">✕</button>
+    </div>
+    <div class="modal-body">
+      <p id="serviceModalDesc" style="color:var(--text-secondary); line-height:1.7; font-size:0.9rem;"></p>
+      <div class="service-modal-section-title">What's Included</div>
+      <ul class="service-modal-list" id="serviceModalIncludes"></ul>
+      <div class="service-modal-section-title">Tools &amp; Technologies</div>
+      <div class="tags" id="serviceModalTags"></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
 <!-- ══════════════════════ PROJECTS ══════════════════════ -->
 <section id="projects">
   <div class="section-inner">
@@ -2120,6 +2368,32 @@ section { overflow:hidden; position:relative; }
             <span class="contact-value">Dhaka, Bangladesh</span>
           </div>
         </div>
+        <div class="contact-info-item">
+          <div class="contact-icon-box">📞</div>
+          <div>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+8801729335233" class="contact-value">+880 1729-335233</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon-box">💬</div>
+          <div>
+            <span class="contact-label">WhatsApp</span>
+            <a href="https://wa.me/8801729335233" class="contact-value" target="_blank" rel="noopener">+880 1729-335233</a>
+          </div>
+        </div>
+
+        <!-- Quick contact: call / WhatsApp -->
+        <div class="quick-contact-row">
+          <a href="tel:+8801729335233" class="quick-contact-btn quick-contact-call">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.25 1.01z"/></svg>
+            Call Now
+          </a>
+          <a href="https://wa.me/8801729335233" class="quick-contact-btn quick-contact-whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.45 1.27 4.9L2 22l5.25-1.38A9.96 9.96 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.79 14.27c-.24.68-1.4 1.3-1.94 1.36-.5.06-1.13.09-1.82-.11-.42-.13-.96-.3-1.65-.6-2.91-1.26-4.8-4.19-4.95-4.39-.15-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.75 1.24 1.61 2 1.11.99 2.04 1.3 2.34 1.45.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.24.65-.15.26.1 1.65.78 1.93.92.29.15.48.22.55.34.07.13.07.72-.17 1.4z"/></svg>
+            WhatsApp
+          </a>
+        </div>
 
         <!-- Full social row with SVGs from index.html -->
         <div class="social-row">
@@ -2164,6 +2438,27 @@ section { overflow:hidden; position:relative; }
 <a href="#home" class="scroll-top" id="scrollTop" title="Back to top">↑</a>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Theme toggle (light/dark, persisted) ──
+(function() {
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById('themeToggle');
+  const stored = localStorage.getItem('taa-theme');
+  const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+  const initial = stored || (prefersLight ? 'light' : 'dark');
+  if (initial === 'light') root.setAttribute('data-theme', 'light');
+
+  toggleBtn.addEventListener('click', () => {
+    const isLight = root.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      root.removeAttribute('data-theme');
+      localStorage.setItem('taa-theme', 'dark');
+    } else {
+      root.setAttribute('data-theme', 'light');
+      localStorage.setItem('taa-theme', 'light');
+    }
+  });
+})();
+
 // ── Navigation ──
 const mainNav  = document.getElementById('mainNav');
 const hamburger = document.getElementById('hamburger');
@@ -2244,8 +2539,101 @@ modalConfig.forEach(({ btn, modal, close }) => {
 
 // ESC closes all modals
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') modalConfig.forEach(({ modal }) => closeModal(modal));
+  if (e.key === 'Escape') { modalConfig.forEach(({ modal }) => closeModal(modal)); closeModal('serviceModal'); }
 });
+
+// ── Services: detail data + shared modal ──
+const SERVICES_DATA = {
+  ml: {
+    icon: '🤖', title: 'AI & Machine Learning Development',
+    tagline: 'From raw data to a working, deployable model',
+    desc: 'I design and build machine learning pipelines end-to-end — data cleaning and feature engineering, model selection and training, evaluation, and deployment — for classification, regression, and prediction problems across domains.',
+    includes: [
+      'Data cleaning, preprocessing & feature engineering',
+      'Model selection, training & hyperparameter tuning',
+      'Evaluation, validation & performance reporting',
+      'Deployment-ready model packaging'
+    ],
+    tags: ['Python', 'Scikit-learn', 'TensorFlow', 'PyTorch', 'Keras']
+  },
+  dl: {
+    icon: '🧠', title: 'Deep Learning, NLP & Computer Vision',
+    tagline: 'Custom neural architectures for language and vision',
+    desc: 'Hands-on experience building transformer, CNN, RNN, and hybrid architectures for sentiment analysis, text classification, and image classification — including published, peer-reviewed work.',
+    includes: [
+      'Transformer-based NLP models (BERT, RoBERTa & custom)',
+      'CNN / hybrid architectures for image classification',
+      'Sentiment analysis & text classification pipelines',
+      'Model benchmarking against established baselines'
+    ],
+    tags: ['Transformers', 'CNN', 'RNN/LSTM', 'HuggingFace', 'NLP']
+  },
+  quantum: {
+    icon: '🔬', title: 'Quantum Computing & QML Consulting',
+    tagline: 'Bridging quantum computing and machine learning',
+    desc: 'Support for quantum machine learning projects and prototypes — from building QML tutorials and educational platforms to advising on Qiskit-based experiments for research or learning purposes.',
+    includes: [
+      'Qiskit-based prototypes & quantum circuit design',
+      'Quantum machine learning concept development',
+      'Educational content & tutorial creation',
+      'Guidance for quantum computing coursework/programs'
+    ],
+    tags: ['Qiskit', 'QML', 'Python', 'Quantum Algorithms']
+  },
+  it: {
+    icon: '🖥️', title: 'IT Infrastructure & Systems Support',
+    tagline: 'Practical IT operations experience, applied to your setup',
+    desc: 'Drawing on my role as an IT Executive at DEFT Engineering, I help with day-to-day IT infrastructure needs — systems setup, troubleshooting, and keeping technical operations running smoothly.',
+    includes: [
+      'IT systems setup & troubleshooting',
+      'Infrastructure maintenance & support',
+      'Technical operations coordination',
+      'Documentation of IT processes'
+    ],
+    tags: ['IT Infrastructure', 'Systems Admin', 'Troubleshooting']
+  },
+  tutoring: {
+    icon: '📚', title: 'STEM Tutoring & Mentorship',
+    tagline: 'One-on-one guidance in math, physics & computer science',
+    desc: 'Private tutoring and mentorship for school and university students, built on a background that spans applied ML research and formal computer science education — focused on building real understanding, not just exam answers.',
+    includes: [
+      'Mathematics & physics tutoring',
+      'Computer science fundamentals & programming help',
+      'Exam & coursework preparation',
+      'Guidance for students exploring AI/ML or quantum computing'
+    ],
+    tags: ['Mathematics', 'Physics', 'CSE', 'Mentorship']
+  },
+  writing: {
+    icon: '✍️', title: 'Research Writing & Technical Documentation',
+    tagline: 'Clear writing for technical and academic work',
+    desc: 'Support for drafting research papers, technical reports, and documentation for AI/ML and quantum computing projects — including experience publishing in peer-reviewed venues.',
+    includes: [
+      'Research paper drafting & structuring',
+      'Technical report & documentation writing',
+      'Presentation & diagram support for research work',
+      'Editing for clarity and academic tone'
+    ],
+    tags: ['Technical Writing', 'Research Papers', 'Documentation']
+  }
+};
+
+const serviceModal = document.getElementById('serviceModal');
+document.querySelectorAll('.service-details-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const s = SERVICES_DATA[btn.dataset.service];
+    if (!s) return;
+    document.getElementById('serviceModalIcon').textContent = s.icon;
+    document.getElementById('serviceModalTitle').textContent = s.title;
+    document.getElementById('serviceModalTagline').textContent = s.tagline;
+    document.getElementById('serviceModalDesc').textContent = s.desc;
+    document.getElementById('serviceModalIncludes').innerHTML = s.includes.map(i => `<li>${i}</li>`).join('');
+    document.getElementById('serviceModalTags').innerHTML = s.tags.map(t => `<span class="tag">${t}</span>`).join('');
+    openModal('serviceModal');
+  });
+});
+document.getElementById('closeServiceModal').addEventListener('click', () => closeModal('serviceModal'));
+serviceModal.addEventListener('click', e => { if (e.target === serviceModal) closeModal('serviceModal'); });
 
 // ══════════════════════════════════════════════════════
 // SECTION BACKGROUND ANIMATIONS
